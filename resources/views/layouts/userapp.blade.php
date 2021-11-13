@@ -71,7 +71,7 @@
             <div class="container">
                 <nav class="navbar navbar-expand-md navbar-light">
                     <a class="navbar-brand" href="index.html">
-                        <img src="assets/img/logo.png" alt="image">
+                        <img src="assets/img/DaVinci Lab.png" alt="image">
                     </a>
                     <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                         <ul class="navbar-nav">

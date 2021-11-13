@@ -9,11 +9,12 @@
                     <div class="row align-items-center">
                         <div class="col-lg-6">
                             <div class="main-banner-content">
-                                <span>Play, Learn and Grow</span>
-                                <h1>Empowering Student Knowledge</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
-                                    gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+                               
+                                <h1>“Everyone has <br> a Da Vinci within”
+                                </h1>
+                                <span>Believe in yourself. Let it out to create wonders !</span>
+                                
+                                <p>DaVinci Lab provides the best learning experience in coding, physical computing and STEM education. It is founded under the core principles of competency based learning and interdisciplinary approach. DaVinci Lab is backed by a well-designed curriculum, scientific assessment framework and team of talented academicians and trainers.</p>
                                 <div class="banner-btn">
                                     <a href="#" class="default-btn">
                                         Learn More
@@ -65,13 +66,11 @@
             <div class="col-lg-6">
                 <div class="who-we-are-content">
                     <span>Who We Are</span>
-                    <h3>Kindergarten and Childhood is Our Passion</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
-                        viverra maecenas accumsan lacus vel facilisis.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua.</p>
-                    <ul class="who-we-are-list">
+                    <h3>SuperTeacher Team</h3>
+                    <p>Society is evolving rapidly, and so do the skills required to thrive in it. DaVinci Lab is a flagship program of SuperTeacher Edureforms Pvt Ltd - a team of seasoned academicians and educators who are dedicated to provide educational training and support aligned to 21st-century requirements. We believe there should be no hard line between academic skills and real-life skills. With a strong team to do research and development and specialists to create the best possible experience and value for our clients, we are known for conducting high-quality training for both teachers and students.
+                    </p>
+                    
+                   {{--  <ul class="who-we-are-list">
                         <li>
                             <span>1</span>
                             Homelike Environment
@@ -88,7 +87,7 @@
                             <span>4</span>
                             Play to Learn
                         </li>
-                    </ul>
+                    </ul> --}}
                     <div class="who-we-are-btn">
                         <a href="#" class="default-btn">Read More</a>
                     </div>
@@ -105,8 +104,9 @@
 <section class="class-area bg-fdf6ed pt-100 pb-70">
     <div class="container">
         <div class="section-title">
-            <span>Classes</span>
-            <h2>Popular Classes</h2>
+            <span>Courses</span>
+            <h2>Course Categories</h2>
+            <span>Our Courses are divided into categories</span>
         </div>
         <div class="row">
             <div class="col-lg-4 col-md-6">
@@ -117,25 +117,22 @@
                         </a>
                     </div>
                     <div class="class-content">
-                        <div class="price">$880</div>
+                        <div class="price">₹880</div>
                         <h3>
-                            <a href="#">Color Matching</a>
+                            <a href="#">Foundation / Precoder</a>
                         </h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt
                             ut labore et dolore magna aliqua.</p>
                         <ul class="class-list">
                             <li>
                                 <span>Age:</span>
-                                3-5 Year
+                                4-8 Year
                             </li>
                             <li>
                                 <span>Time:</span>
                                 8-10 AM
                             </li>
-                            <li>
-                                <span>Seat:</span>
-                                25
-                            </li>
+                           
                         </ul>
                         <div class="class-btn">
                             <a href="#" class="default-btn">Join Class</a>
@@ -151,25 +148,22 @@
                         </a>
                     </div>
                     <div class="class-content">
-                        <div class="price">$790</div>
+                        <div class="price">₹790</div>
                         <h3>
-                            <a href="#">Learning Disciplines</a>
+                            <a href="#">Preparatory </a>
                         </h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt
                             ut labore et dolore magna aliqua.</p>
                         <ul class="class-list">
                             <li>
                                 <span>Age:</span>
-                                3-5 Year
+                                8-11 Year
                             </li>
                             <li>
                                 <span>Time:</span>
                                 8-10 AM
                             </li>
-                            <li>
-                                <span>Seat:</span>
-                                25
-                            </li>
+                            
                         </ul>
                         <div class="class-btn">
                             <a href="#" class="default-btn">Join Class</a>
@@ -185,25 +179,22 @@
                         </a>
                     </div>
                     <div class="class-content">
-                        <div class="price">$590</div>
+                        <div class="price">₹590</div>
                         <h3>
-                            <a href="#">Drawing</a>
+                            <a href="#">Middle</a>
                         </h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt
                             ut labore et dolore magna aliqua.</p>
                         <ul class="class-list">
                             <li>
                                 <span>Age:</span>
-                                3-5 Year
+                                11-14 Year
                             </li>
                             <li>
                                 <span>Time:</span>
                                 8-10 AM
                             </li>
-                            <li>
-                                <span>Seat:</span>
-                                25
-                            </li>
+                            
                         </ul>
                         <div class="class-btn">
                             <a href="#" class="default-btn">Join Class</a>
