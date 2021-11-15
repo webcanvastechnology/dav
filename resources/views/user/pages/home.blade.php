@@ -106,72 +106,86 @@
         <div class="section-title">
             <span>Courses</span>
             <h2>Course Categories</h2>
-            <span>Our Courses are divided into categories</span>
+            <span>Our Courses are divided into four categories</span>
         </div>
         <div class="row">
+            @foreach ($all_category as $v_category )
+                
+            
             <div class="col-lg-4 col-md-6">
                 <div class="single-class">
-                    <div class="class-image">
+                    {{-- <div class="class-image">
                         <a href="#">
                             <img src="assets/img/class/class-1.jpg" alt="image">
                         </a>
-                    </div>
+                    </div> --}}
                     <div class="class-content">
-                        <div class="price">₹880</div>
+                        
                         <h3>
-                            <a href="#">Foundation / Precoder</a>
+                            <a href="#">{{ $v_category->category_name }}</a>
                         </h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt
-                            ut labore et dolore magna aliqua.</p>
-                        <ul class="class-list">
-                            <li>
-                                <span>Age:</span>
-                                4-8 Year
-                            </li>
-                            <li>
-                                <span>Time:</span>
-                                8-10 AM
-                            </li>
+                        <p>{!! $v_category->category_desc  !!} </p>
                            
-                        </ul>
-                        <div class="class-btn">
-                            <a href="#" class="default-btn">Join Class</a>
-                        </div>
+                            
+                        
+                        
                     </div>
                 </div>
             </div>
+            @endforeach
+            
+        </div>
+    </div>
+    <div class="class-shape">
+        <div class="shape-1">
+            <img src="assets/img/class/class-shape-1.png" alt="image">
+        </div>
+        <div class="shape-2">
+            <img src="assets/img/class/class-shape-2.png" alt="image">
+        </div>
+    </div>
+</section>
+<!--Popular Courses -->
+<section class="class-area bg-fdf6ed pt-100 pb-70">
+    <div class="container">
+        <div class="section-title">
+            
+            <h2>Popular Courses</h2>
+            
+        </div>
+        <div class="row">
+            @foreach ($all_course as $v_course )
+                
+            
             <div class="col-lg-4 col-md-6">
                 <div class="single-class">
                     <div class="class-image">
                         <a href="#">
-                            <img src="assets/img/class/class-2.jpg" alt="image">
+                            <img src="{{asset('course_image/'.$v_course->course_image)}}" alt="image">
                         </a>
                     </div>
                     <div class="class-content">
-                        <div class="price">₹790</div>
+                        <div class="price">₹{{ $v_course->price }}</div>
                         <h3>
-                            <a href="#">Preparatory </a>
+                            <a href="#">{{ $v_course->course_title }}</a>
                         </h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt
-                            ut labore et dolore magna aliqua.</p>
+                        <p>{!! $v_course->short_desc !!}</p>
                         <ul class="class-list">
                             <li>
-                                <span>Age:</span>
-                                8-11 Year
-                            </li>
-                            <li>
-                                <span>Time:</span>
-                                8-10 AM
+                                <span>Level:</span>
+                                {{ $v_course->level }}
                             </li>
                             
+                           
                         </ul>
                         <div class="class-btn">
-                            <a href="#" class="default-btn">Join Class</a>
+                            <a href="#" class="default-btn">Join Course</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
+            @endforeach
+           {{--  <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
                 <div class="single-class">
                     <div class="class-image">
                         <a href="#">
@@ -201,7 +215,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
     <div class="class-shape">
@@ -215,7 +229,8 @@
 </section>
 
 
-<section class="value-area ptb-100">
+
+{{-- <section class="value-area ptb-100">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
@@ -268,14 +283,14 @@
             <img src="assets/img/value/value-shape-3.png" alt="image">
         </div>
     </div>
-</section>
+</section> --}}
 
 
 <section class="teacher-area bg-ffffff pt-100 pb-70">
     <div class="container-fluid">
         <div class="section-title">
-            <span>Our Core Teacher</span>
-            <h2>Meet Our Teacher</h2>
+            <span>Our Mentors</span>
+            <h2>Advisory Board</h2>
         </div>
         <div class="row">
             <div class="col-lg-3 col-md-6">
@@ -306,8 +321,8 @@
                         </ul>
                     </div>
                     <div class="content">
-                        <h3>Glims Bond</h3>
-                        <span>Music Teacher</span>
+                        <h3>Dr. Piyush Gupta</h3>
+                        <span>Academic Coordinator - CSC Academy</span>
                     </div>
                 </div>
             </div>
@@ -339,8 +354,9 @@
                         </ul>
                     </div>
                     <div class="content">
-                        <h3>Sherlock Bin</h3>
-                        <span>Art Teacher</span>
+                        <h3>Veena Raizada</h3>
+                        <span>Academic Consultant
+                        </span>
                     </div>
                 </div>
             </div>
@@ -373,7 +389,9 @@
                     </div>
                     <div class="content">
                         <h3>Priestly Herbart</h3>
-                        <span>Math Teacher</span>
+                        <span>Principal
+                            Milkyway High School, Hyderabad
+                            </span>
                     </div>
                 </div>
             </div>
@@ -406,7 +424,7 @@
                     </div>
                     <div class="content">
                         <h3>Smith Broke</h3>
-                        <span>English Teacher</span>
+                        <span>Entrepreneur</span>
                     </div>
                 </div>
             </div>
@@ -419,7 +437,7 @@
     <div class="container">
         <div class="section-title">
             <span>Testimonials</span>
-            <h2>What Parents Say About Us</h2>
+            <h2>What Students Say</h2>
         </div>
         <div class="testimonials-slides owl-carousel owl-theme">
             <div class="testimonials-item">
@@ -427,12 +445,13 @@
                     <div class="icon">
                         <i class='bx bxs-quote-left'></i>
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
-                        viverra maecenas accumsan lacus vel facilisis.</p>
+                    <p>I learned many things in DaVinci Lab. The sessions were very enjoyable. I also liked the teachers. Great classes. If any such course comes again, I will surely join it.</p>
                     <div class="info-box">
-                        <h3>Glims Bond</h3>
-                        <span>Music Teacher</span>
+                        <h3>Aditya Mishra
+                            
+                            </h3>
+                        <span>Student,
+                            D.P.S Kalinga, Orissa</span>
                     </div>
                 </div>
                 <div class="testimonials-image">
@@ -444,12 +463,14 @@
                     <div class="icon">
                         <i class='bx bxs-quote-left'></i>
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
-                        viverra maecenas accumsan lacus vel facilisis.</p>
+                    <p>The sessions were really amazing. The teachers taught beautifully and cleared all our doubts. I would request you to keep coming up with new courses, workshops and competitions.
+                    </p>
                     <div class="info-box">
-                        <h3>Sherlock Bin</h3>
-                        <span>Art Teacher</span>
+                        <h3>Riya Baid
+                            
+                            </h3>
+                        <span>Student,
+                            Mahadevi Birla World Academy, Kolkata</span>
                     </div>
                 </div>
                 <div class="testimonials-image">
@@ -461,69 +482,20 @@
                     <div class="icon">
                         <i class='bx bxs-quote-left'></i>
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
-                        viverra maecenas accumsan lacus vel facilisis.</p>
+                    <p>The DaVinci Lab course has been a great opportunity for me to learn coding on different platforms and alongside enhance my skills in art and storytelling also. The teachers were very supportive during all the classes</p>
                     <div class="info-box">
-                        <h3>Priestly Herbart</h3>
-                        <span>Math Teacher</span>
+                        <h3>Akshara Singla
+                           
+                            </h3>
+                        <span> Student,
+                            D.P.S Panipat Refinery, Dadlana, Haryana</span>
                     </div>
                 </div>
                 <div class="testimonials-image">
                     <img src="assets/img/testimonials/testimonials-3.png" alt="image">
                 </div>
             </div>
-            <div class="testimonials-item">
-                <div class="testimonials-item-box">
-                    <div class="icon">
-                        <i class='bx bxs-quote-left'></i>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
-                        viverra maecenas accumsan lacus vel facilisis.</p>
-                    <div class="info-box">
-                        <h3>Glims Bond</h3>
-                        <span>Music Teacher</span>
-                    </div>
-                </div>
-                <div class="testimonials-image">
-                    <img src="assets/img/testimonials/testimonials-1.png" alt="image">
-                </div>
-            </div>
-            <div class="testimonials-item">
-                <div class="testimonials-item-box">
-                    <div class="icon">
-                        <i class='bx bxs-quote-left'></i>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
-                        viverra maecenas accumsan lacus vel facilisis.</p>
-                    <div class="info-box">
-                        <h3>Sherlock Bin</h3>
-                        <span>Art Teacher</span>
-                    </div>
-                </div>
-                <div class="testimonials-image">
-                    <img src="assets/img/testimonials/testimonials-2.png" alt="image">
-                </div>
-            </div>
-            <div class="testimonials-item">
-                <div class="testimonials-item-box">
-                    <div class="icon">
-                        <i class='bx bxs-quote-left'></i>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
-                        viverra maecenas accumsan lacus vel facilisis.</p>
-                    <div class="info-box">
-                        <h3>Priestly Herbart</h3>
-                        <span>Math Teacher</span>
-                    </div>
-                </div>
-                <div class="testimonials-image">
-                    <img src="assets/img/testimonials/testimonials-3.png" alt="image">
-                </div>
-            </div>
+            
         </div>
     </div>
 </section>
@@ -667,7 +639,7 @@
 </section>
 
 
-<section class="blog-area pt-100 pb-70">
+{{-- <section class="blog-area pt-100 pb-70">
     <div class="container">
         <div class="section-title">
             <span>News and Blog</span>
@@ -763,5 +735,5 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 @endsection

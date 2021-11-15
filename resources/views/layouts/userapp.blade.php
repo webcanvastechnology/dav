@@ -10,7 +10,7 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    
+
 
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.rtl.min.css')}}">
 
@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css')}}">
 
     <link rel="stylesheet" href="{{ asset('assets/css/rtl.css')}}">
-    <title>Ketan - Kindergarten & School HTML Template</title>
+    <title>DaVinci Lab</title>
     <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png')}}">
 
 
@@ -61,7 +61,7 @@
                 <div class="main-responsive-menu">
                     <div class="logo">
                         <a href="index.html">
-                            <img src="assets/img/logo.png" alt="image">
+                            <img src="assets/img/DaVinci Lab.png" alt="image">
                         </a>
                     </div>
                 </div>
@@ -299,7 +299,18 @@
                                 </div>
                             </div>
                             <div class="option-item">
-                                <a href="#" class="default-btn">Contact Us</a>
+                                @guest
+                                @if (Route::has('login'))
+                                <a href="{{ route('login') }}" class="default-btn">Login</a>
+                                @endif
+                                @else
+                                <a href="{{ route('logout') }}" class="default-btn" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                              document.getElementById('logout-form').submit();">Logout</a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                                @endguest
                             </div>
                         </div>
                     </div>
@@ -361,7 +372,7 @@
 
     @yield('content')
 
-  
+
 
     <section class="footer-area pt-100 pb-70">
         <div class="container">
@@ -370,11 +381,10 @@
                     <div class="single-footer-widget">
                         <div class="logo">
                             <h2>
-                                <a href="index.html">Ketan</a>
+                                <a href="index.html"><img src="assets/img/DaVinci Lab.png" alt="image"></a>
                             </h2>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua.</p>
+                        <p>The SUPERTEACHER team is dedicated to equip teachers with the all round skills, which will in turn help them play their role to the best of their capability. </p>
                         <ul class="social">
                             <li>
                                 <a href="#" target="_blank">
@@ -405,47 +415,43 @@
                         <ul class="footer-contact-info">
                             <li>
                                 <i class='bx bxs-phone'></i>
-                                <span>Phone</span>
-                                <a href="tel:882569756">882-569-756</a>
+                                <span> Phone</span>
+                                <a href="tel:+91 9908442000">+91 9908442000</a>
+                               
                             </li>
                             <li>
                                 <i class='bx bx-envelope'></i>
                                 <span>Email</span>
-                                <a
-                                    href="https://templates.envytheme.com/cdn-cgi/l/email-protection#462e232a2a29062d233227286825292b"><span
-                                        class="__cf_email__"
-                                        data-cfemail="cfa7aaa3a3a08fa4aabbaea1e1aca0a2">[email&#160;protected]</span></a>
+                                <a href="">connect@superteacher.in</span></a>
                             </li>
                             <li>
                                 <i class='bx bx-map'></i>
                                 <span>Address</span>
-                                175 5th Ave Premium Area, New York, NY 10010, United States
+                                8-107/12, M-park residency, Shilpa Nagar, Nagaram, Hyderabad-500083
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-footer-widget pl-5">
-                        <h3>Activities</h3>
+                        <h3>Useful Links </h3>
                         <ul class="quick-links">
                             <li>
-                                <a href="#">Maths Olympiad</a>
+                                <a href="#">About us</a>
                             </li>
                             <li>
-                                <a href="#">Art Competition</a>
+                                <a href="#">Our Courses</a>
                             </li>
                             <li>
-                                <a href="#">English Novels</a>
+                                <a href="#">Terms and Conditions</a>
                             </li>
                             <li>
-                                <a href="#">Science Competition</a>
+                                <a href="#">Privacy Policy</a>
                             </li>
                             <li>
-                                <a href="#">Teachers Day</a>
+                                <a href="#">Contact Us</a>
                             </li>
-                            <li>
-                                <a href="#">World Kids Day</a>
-                            </li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -519,10 +525,8 @@
         <div class="container">
             <div class="copyright-area-content">
                 <p>
-                    Copyright © 2021 Ketan. All Rights Reserved by
-                    <a href="https://envytheme.com/" target="_blank">
-                        EnvyTheme
-                    </a>
+                    Copyright © 2021 DaVinci Lab. All Rights Reserved by
+                   
                 </p>
             </div>
         </div>
@@ -536,7 +540,7 @@
 
     <script src="{{ asset('assets/js/jquery.min.js')}}"></script>
 
-    
+
     <script src="{{ asset('assets/js/popper.min.js')}}"></script>
 
     <script src="{{ asset('assets/js/bootstrap.min.js')}}"></script>
