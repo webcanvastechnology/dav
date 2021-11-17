@@ -25,10 +25,11 @@ class RegularCourseController extends Controller
         $this->superadmin_auth_check();
 
         $all_audience = DB::table('aud_category')->get();
-
+        $all_category=DB::table('course_category')->get();
             
         $addcourse=view('admin.pages.add_regular_courses')
-                    ->with('all_audience',$all_audience);
+                    ->with('all_audience',$all_audience)
+                    ->with('all_category',$all_category);
                         
             return view('admin.admin-master')
                     ->with('admin_main_content',$addcourse);
@@ -66,7 +67,8 @@ class RegularCourseController extends Controller
         $data['course_title'] = $request->course_title;
         $data['duration'] = $request->duration;
         $data['price'] = $request->price;
-        
+        $data['level'] = $request->level;
+        $data['course_category'] = $request->course_category;
 
         
         $data['priority'] = $request->priority;

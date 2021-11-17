@@ -27,7 +27,7 @@
             <div class="col-lg-8 col-md-12">
                 <div class="class-details-desc">
                     <div class="class-desc-image">
-                        <img src="assets/img/class-details.jpg" alt="image">
+                        <img src="{{asset('course_image/'.$find_course->course_image)}}" alt="image">
                     </div>
                     <div class="tab class-details-tab">
                         <div class="row">
@@ -59,26 +59,8 @@
                                 <div class="tab_content">
                                     <div class="tabs_item">
                                         <div class="class-desc-content">
-                                            <h3>Education Lessons</h3>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                                commodo consequat.</p>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                                commodo consequat.</p>
-                                            <h3>English Lesson Class</h3>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                                commodo consequat.</p>
-                                            <h3>Requirements</h3>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                                commodo consequat.</p>
-                                            <ul class="requirements-list">
+                                            {!! $find_course->long_desc !!}
+                                            {{-- <ul class="requirements-list">
                                                 <li>
                                                     <i class='bx bx-check'></i>
                                                     Aliquam sit amet mi vitae turpis gravida vulputate.
@@ -95,7 +77,7 @@
                                                     <i class='bx bx-check'></i>
                                                     Mauris a purus ut mauris sodales ultrices.
                                                 </li>
-                                            </ul>
+                                            </ul> --}}
                                         </div>
                                     </div>
                                     <div class="tabs_item">
@@ -267,111 +249,49 @@
             </div>
             <div class="col-lg-12 col-md-12">
                 <div class="related-class">
-                    <h3>Popular Class</h3>
+                    <h3>Audience Category</h3>
+                    <?php if($status==1){ ?>
+
+                        <?php $auds = json_decode($find_course->audience_category ); ?>
+                        @if (is_array($auds))
                     <div class="row">
+                        
+
+                @foreach($auds as $aud)
+                <?php $find_aud=DB::table('aud_category')->where('aud_id',$aud)->first(); ?>
+                 
                         <div class="col-lg-4 col-md-6">
                             <div class="single-class">
                                 <div class="class-image">
                                     <a href="#">
-                                        <img src="assets/img/class/class-1.jpg" alt="image">
+                                        <img src="{{asset('course_image/'.$find_course->course_image)}}" alt="image">
                                     </a>
                                 </div>
                                 <div class="class-content">
-                                    <div class="price">$880</div>
+                                    <div class="price">₹{{$find_aud->price}}</div>
                                     <h3>
-                                        <a href="#">Color Matching</a>
+                                        <a href="#">{{$find_aud->aud_name}}</a>
                                     </h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua.</p>
-                                    <ul class="class-list">
+                                    <p>{!! $find_aud->aud_short_desc !!}</p>
+                                    {{-- <ul class="class-list">
                                         <li>
-                                            <span>Age:</span>
-                                            3-5 Year
+                                            <span>Duration:</span>
+                                            {{$find_aud->duration}}
                                         </li>
-                                        <li>
-                                            <span>Time:</span>
-                                            8-10 AM
-                                        </li>
-                                        <li>
-                                            <span>Seat:</span>
-                                            25
-                                        </li>
-                                    </ul>
+                                       
+                                    </ul> --}}
                                     <div class="class-btn">
-                                        <a href="#" class="default-btn">Join Class</a>
+                                        <a href="{{URL::to('regular-registration/'.$find_course->id.'/'.$find_aud->aud_id) }}" class="default-btn">Join Class</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="single-class">
-                                <div class="class-image">
-                                    <a href="#">
-                                        <img src="assets/img/class/class-2.jpg" alt="image">
-                                    </a>
-                                </div>
-                                <div class="class-content">
-                                    <div class="price">$790</div>
-                                    <h3>
-                                        <a href="#">Learning Disciplines</a>
-                                    </h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua.</p>
-                                    <ul class="class-list">
-                                        <li>
-                                            <span>Age:</span>
-                                            3-5 Year
-                                        </li>
-                                        <li>
-                                            <span>Time:</span>
-                                            8-10 AM
-                                        </li>
-                                        <li>
-                                            <span>Seat:</span>
-                                            25
-                                        </li>
-                                    </ul>
-                                    <div class="class-btn">
-                                        <a href="#" class="default-btn">Join Class</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="single-class">
-                                <div class="class-image">
-                                    <a href="#">
-                                        <img src="assets/img/class/class-3.jpg" alt="image">
-                                    </a>
-                                </div>
-                                <div class="class-content">
-                                    <div class="price">$590</div>
-                                    <h3>
-                                        <a href="#">Drawing</a>
-                                    </h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua.</p>
-                                    <ul class="class-list">
-                                        <li>
-                                            <span>Age:</span>
-                                            3-5 Year
-                                        </li>
-                                        <li>
-                                            <span>Time:</span>
-                                            8-10 AM
-                                        </li>
-                                        <li>
-                                            <span>Seat:</span>
-                                            25
-                                        </li>
-                                    </ul>
-                                    <div class="class-btn">
-                                        <a href="#" class="default-btn">Join Class</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
+                <!-- Item 3 -->
+                @endif
+
                     </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>

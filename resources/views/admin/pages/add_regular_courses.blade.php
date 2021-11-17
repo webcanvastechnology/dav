@@ -101,6 +101,31 @@
                                             </div>
                                         </div>
                                         <div class="control-group">
+                                            <label class="control-label">Course Category</label>
+                                            <div class="controls">
+                                               
+            
+                                                <select class="form-control" id="exampleFormControlSelect1" name="course_category">
+                                                <option value="">--select--</option>  
+                                                @foreach($all_category as $v_category)
+                                                
+                                                <option value="{{ $v_category->id }}">{{ $v_category->category_name }}</option>
+                                               
+                                               @endforeach
+                                                
+                                              </select>
+                                               
+                                               
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label">Level</label>
+                                            <div class="controls">
+                                                <input type="text" class="span6 " name="level" />
+                                               
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
                                             <label class="control-label">Duration</label>
                                             <div class="controls">
                                                 <input type="text" class="span6 " name="duration" />

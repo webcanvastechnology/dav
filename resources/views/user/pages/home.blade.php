@@ -112,7 +112,7 @@
             @foreach ($all_category as $v_category )
                 
             
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-3 col-md-6">
                 <div class="single-class">
                     {{-- <div class="class-image">
                         <a href="#">
@@ -167,7 +167,7 @@
                     <div class="class-content">
                         <div class="price">₹{{ $v_course->price }}</div>
                         <h3>
-                            <a href="#">{{ $v_course->course_title }}</a>
+                            <a href="{{URL::to('course-details/'.$v_course->id) }}">{{ $v_course->course_title }}</a>
                         </h3>
                         <p>{!! $v_course->short_desc !!}</p>
                         <ul class="class-list">

@@ -23,14 +23,13 @@ use App\Http\Controllers\WorkshopController;
     return view('welcome');
 }); */
 
-Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
+Route::get('/abcd', [FrontendController::class, 'abcd']);
 
 Auth::routes();
 
 Route::get('/', [FrontendController::class, 'home'])->name('home');
 Route::get('/courses', [FrontendController::class, 'courses'])->name('courses');
-Route::get('/course-details', [FrontendController::class, 'course_details'])->name('course-details');
-
+Route::get('/course-details/{id}', [FrontendController::class, 'course_details']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('userdashboard');
 
 

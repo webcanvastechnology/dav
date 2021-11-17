@@ -236,11 +236,7 @@
                                             Courses
                                         </a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a href="{{ route('course-details') }}" class="nav-link">
-                                            Courses Details
-                                        </a>
-                                    </li>
+                                    
                                 </ul>
                             </li>
                             <li class="nav-item">
