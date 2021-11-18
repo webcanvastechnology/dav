@@ -728,7 +728,7 @@
    <script type="text/javascript" src="{{asset('admin_asset/assets/chosen-bootstrap/chosen/chosen.jquery.min.js')}}"></script>
    
  
-   <script src="{{asset('frontend')}}/toaster/toastr.min.js"></script>
+   <script src="{{asset('frontend/toaster/toastr.min.js')}}"></script>
    
         {!! Toastr::message() !!}
 
