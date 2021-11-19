@@ -27,7 +27,7 @@
             <div class="col-lg-8 col-md-12">
                 <div class="class-details-desc">
                     <div class="class-desc-image">
-                        <img src="{{asset('course_image/'.$find_course->course_image)}}" alt="image">
+                        <img src="{{asset('regular_course_image/'.$find_course->course_image)}}" alt="image">
                     </div>
                     <div class="tab class-details-tab">
                         <div class="row">
@@ -281,7 +281,7 @@
                                        
                                     </ul> --}}
                                     <div class="class-btn">
-                                        <a href="{{URL::to('regular-registration/'.$find_course->id.'/'.$find_aud->aud_id) }}" class="default-btn">Join Class</a>
+                                        <a href="{{URL::to('course-registration/'.$find_course->id.'/'.$find_aud->aud_id) }}" class="default-btn">Join Class</a>
                                     </div>
                                 </div>
                             </div>

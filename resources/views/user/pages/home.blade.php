@@ -161,7 +161,7 @@
                 <div class="single-class">
                     <div class="class-image">
                         <a href="#">
-                            <img src="{{asset('course_image/'.$v_course->course_image)}}" alt="image">
+                            <img src="{{asset('regular_course_image/'.$v_course->course_image)}}" alt="image">
                         </a>
                     </div>
                     <div class="class-content">
@@ -179,7 +179,7 @@
                            
                         </ul>
                         <div class="class-btn">
-                            <a href="#" class="default-btn">Join Course</a>
+                            <a href="{{URL::to('course-details/'.$v_course->id) }}" class="default-btn">Join Course</a>
                         </div>
                     </div>
                 </div>
@@ -440,61 +440,26 @@
             <h2>What Students Say</h2>
         </div>
         <div class="testimonials-slides owl-carousel owl-theme">
+            @foreach ($all_testimonial as $v_testimonial )
+                
+           
             <div class="testimonials-item">
                 <div class="testimonials-item-box">
                     <div class="icon">
                         <i class='bx bxs-quote-left'></i>
                     </div>
-                    <p>I learned many things in DaVinci Lab. The sessions were very enjoyable. I also liked the teachers. Great classes. If any such course comes again, I will surely join it.</p>
+                    <p>{!! $v_testimonial->educator_msg !!}</p>
                     <div class="info-box">
-                        <h3>Aditya Mishra
-                            
-                            </h3>
-                        <span>Student,
-                            D.P.S Kalinga, Orissa</span>
+                        <h3>{{ $v_testimonial->educator_name }}</h3>
+                        <span>{{ $v_testimonial->educator_designation }},
+                            {{ $v_testimonial->educator_org }}</span>
                     </div>
                 </div>
                 <div class="testimonials-image">
                     <img src="assets/img/testimonials/testimonials-1.png" alt="image">
                 </div>
             </div>
-            <div class="testimonials-item">
-                <div class="testimonials-item-box">
-                    <div class="icon">
-                        <i class='bx bxs-quote-left'></i>
-                    </div>
-                    <p>The sessions were really amazing. The teachers taught beautifully and cleared all our doubts. I would request you to keep coming up with new courses, workshops and competitions.
-                    </p>
-                    <div class="info-box">
-                        <h3>Riya Baid
-                            
-                            </h3>
-                        <span>Student,
-                            Mahadevi Birla World Academy, Kolkata</span>
-                    </div>
-                </div>
-                <div class="testimonials-image">
-                    <img src="assets/img/testimonials/testimonials-2.png" alt="image">
-                </div>
-            </div>
-            <div class="testimonials-item">
-                <div class="testimonials-item-box">
-                    <div class="icon">
-                        <i class='bx bxs-quote-left'></i>
-                    </div>
-                    <p>The DaVinci Lab course has been a great opportunity for me to learn coding on different platforms and alongside enhance my skills in art and storytelling also. The teachers were very supportive during all the classes</p>
-                    <div class="info-box">
-                        <h3>Akshara Singla
-                           
-                            </h3>
-                        <span> Student,
-                            D.P.S Panipat Refinery, Dadlana, Haryana</span>
-                    </div>
-                </div>
-                <div class="testimonials-image">
-                    <img src="assets/img/testimonials/testimonials-3.png" alt="image">
-                </div>
-            </div>
+            @endforeach
             
         </div>
     </div>

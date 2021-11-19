@@ -10,7 +10,10 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-
+    <meta name="description"
+        content="The DaVinci Lab Team is dedicated to provide high quality education with the skills and competencies required to thrive in and drive the 21st century world.">
+    <meta name="keywords"
+        content="Da-Vinci, DaVinci, DaVincilab, Codekick, SuperTeacher, Coding, Computer Programming, CS for kids, Coding for Kids, Physical Computing, Creative Computing, Robotics, STEM education, STEAM Education, Competency based education, Interdisciplinary Approach, NEP 2020, National Education policy on coding, DaVinci Junior, National Coding Olympiad Junior">
 
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.rtl.min.css')}}">
 
@@ -37,7 +40,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/rtl.css')}}">
     <title>DaVinci Lab</title>
     <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png')}}">
-
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </head>
 
@@ -380,7 +383,7 @@
                                 <a href="index.html"><img src="assets/img/DaVinci Lab.png" alt="image"></a>
                             </h2>
                         </div>
-                        <p>The SUPERTEACHER team is dedicated to equip teachers with the all round skills, which will in turn help them play their role to the best of their capability. </p>
+                        <p>The DaVinci Lab Team is dedicated to provide high quality education with the skills and competencies required to thrive in and drive the 21st century world. </p>
                         <ul class="social">
                             <li>
                                 <a href="#" target="_blank">

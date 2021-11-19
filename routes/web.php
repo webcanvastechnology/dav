@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SuperAdminController;
 use App\Http\Controllers\RegularCourseController;
 use App\Http\Controllers\WorkshopController;
+use App\Http\Controllers\RegularCoursePayment;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,9 +31,14 @@ Auth::routes();
 Route::get('/', [FrontendController::class, 'home'])->name('home');
 Route::get('/courses', [FrontendController::class, 'courses'])->name('courses');
 Route::get('/course-details/{id}', [FrontendController::class, 'course_details']);
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('userdashboard');
+Route::get('/apply-code',[FrontendController::class, 'apply_code'])->name('apply-code');
+Route::get('/home', [HomeController::class, 'index'])->name('userdashboard');
+Route::get('course-registration/{id}/{sub_id}', [RegularCoursePayment::class, 'course_registration'])->name('course-registration');
+Route::post('post-registration-course', [RegularCoursePayment::class, 'postRegistration_course'])->name('postregistration-course');
+Route::get('confirm-course', [RegularCoursePayment::class, 'confirm_course'])->name('confirm-course');
+Route::post('regular-payment-process', [RegularCoursePayment::class, 'paymentProcess']);
 
-
+Route::get('regular-payment-success/{app_id}', [RegularCoursePayment::class, 'paymentSuccess']);
 /*
 Start Admin Panel
 

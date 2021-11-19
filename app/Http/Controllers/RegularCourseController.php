@@ -122,11 +122,12 @@ public function edit_regular_course($id)
 
         $all_audience = DB::table('aud_category')->get();
         $find_course = DB::table('regular_courses')->where('id',$id)->first();
-
+        $all_category=DB::table('course_category')->get();
             
         $addcourse=view('admin.pages.edit_regular_courses')
                     ->with('all_audience',$all_audience)
-                    ->with('find_course',$find_course);
+                    ->with('find_course',$find_course)
+                    ->with('all_category',$all_category);
                         
             return view('admin.admin-master')
                     ->with('admin_main_content',$addcourse);
@@ -174,7 +175,8 @@ public function edit_regular_course($id)
         $data['duration'] = $request->duration;
         $data['price'] = $request->price;
         
-
+        $data['level'] = $request->level;
+        $data['course_category'] = $request->course_category;
         
         $data['priority'] = $request->priority;
         

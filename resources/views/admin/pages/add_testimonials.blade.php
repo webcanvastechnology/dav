@@ -130,7 +130,7 @@
                                 <div class="controls">
                                    
 
-                                    <select class="form-control" id="exampleFormControlSelect1" name="msg_type">
+                                    <select class="form-control" id="msg_type" name="msg_type" onchange="showDiv()">
                                     <option value="">--select--</option>  
                                     <option value="0">Text</option>
                                     <option value="1">Video</option>
@@ -197,12 +197,12 @@
          </div>
 
         <script type="text/javascript">
-function showDiv(select){
-   if(select.value==1){
+function showDiv(){
+   if(document.getElementById("msg_type").value==1){
     document.getElementById('video_msg').style.display = "block";
     document.getElementById('text_msg').style.display = "none";
    } 
-   else if(select.value==0){
+   else if(document.getElementById("msg_type").value==0){
     document.getElementById('text_msg').style.display = "block";
     document.getElementById('video_msg').style.display = "none";
    }

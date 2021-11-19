@@ -35,7 +35,7 @@
                     <div class="class-content">
                         <div class="price">₹{{ $v_course->price }}</div>
                         <h3>
-                            <a href="#">{{ $v_course->course_title }}</a>
+                            <a href="{{URL::to('course-details/'.$v_course->id) }}">{{ $v_course->course_title }}</a>
                         </h3>
                         <p>{!! $v_course->short_desc !!}</p>
                         <ul class="class-list">
@@ -46,7 +46,7 @@
                             
                         </ul>
                         <div class="class-btn">
-                            <a href="#" class="default-btn">Join Course</a>
+                            <a href="{{URL::to('course-details/'.$v_course->id) }}" class="default-btn">Join Course</a>
                         </div>
                     </div>
                 </div>

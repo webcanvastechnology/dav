@@ -100,6 +100,31 @@
 
                                             </div>
                                         </div>
+                                        <div class="control-group">
+                                            <label class="control-label">Course Category</label>
+                                            <div class="controls">
+                                               
+            
+                                                <select class="form-control" id="exampleFormControlSelect1" name="course_category">
+                                                <option value="">--select--</option>  
+                                                @foreach($all_category as $v_category)
+                                                
+                                                <option value="{{ $v_category->id }}">{{ $v_category->category_name }}</option>
+                                               
+                                               @endforeach
+                                                
+                                              </select>
+                                               
+                                               
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label">Level</label>
+                                            <div class="controls">
+                                                <input type="text" class="span6 " name="level" value="{{ $find_course->level }}" />
+                                               
+                                            </div>
+                                        </div
                                         <input type="hidden" class="span6 " name="course_id" value="{{ $find_course->id }}" />
                                         <div class="control-group">
                                             <label class="control-label">Duration</label>
@@ -143,7 +168,7 @@
                                             <div class="controls">
                                                 
                                                 <input type="file" class="default" name="course_image[]" multiple>
-                                                <img src="{{asset('public/regular_course_image/'.$find_course->course_image)}}">
+                                                <img src="{{asset('regular_course_image/'.$find_course->course_image)}}">
                                             </div>
                                         </div>
 
