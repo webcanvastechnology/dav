@@ -888,6 +888,153 @@ public function delete_date($id)
         return redirect::to('/manage-date');
 }
 
+//Upcoming Event
+public function add_news()
+{
+     $this->superadmin_auth_check();
+
+        
+      
+        
+        $addnews=view('admin.pages.add_news');
+                
+                       
+         return view('admin.admin-master')
+                ->with('admin_main_content',$addnews);
+}
+
+public function postNews(Request $request){
+
+    $this->validate($request,array(
+        'title' => 'required',
+        
+        'news_image' => 'required',   
+        
+    ));
+
+
+    $data=array();
+  
+    
+
+     $images = $request->file('news_image');
+   
+   if($request->hasFile('news_image'))
+    {
+        foreach ($images as $image) {
+
+    $imageName = $image->getClientOriginalName();
+
+    $image->move(public_path('news_image'),$imageName);
+    $data['title'] = $request->title;
+    $data['news_date'] = $request->news_date;
+    $data['news_details'] = $request->news_details;
+   
+
+     $data['short_info'] = $request->short_info;
+    
+    $data['status'] = 1;
+   
+   
+   
+    
+   
+     $data['news_image'] = $imageName;
+    DB::table('tbl_news')
+            ->insert($data);
+     
+}
+    
+           
+
+    Toastr::success(' news added Successfull !!  ', 'Success');
+   return redirect::to('add-news');
+
+ }
+     
+ }
+
+public function manage_news()
+{
+     $this->superadmin_auth_check();
+
+        
+
+        $all_news = DB::table('tbl_news')->get();
+              
+                            
+
+        $manage_news=view('admin.pages.news_list')
+                        ->with('all_news',$all_news);
+         return view('admin.admin-master')
+                ->with('admin_main_content',$manage_news);
+}
+
+public function edit_news($id)
+{
+     $this->superadmin_auth_check();
+
+        
+       
+        $find_news=DB::table('tbl_news')->where('id',$id)->first();
+        
+        $addnews=view('admin.pages.edit_news')
+                 ->with('find_news',$find_news);
+                       
+         return view('admin.admin-master')
+                ->with('admin_main_content',$addnews);
+}
+
+public function update_news(Request $request){
+
+        $this->validate($request,array(
+            'news_id' => 'required',
+            
+            'news_date' => 'required', 
+            
+            
+            
+            
+             
+        ));
+
+        $id=$request->id;
+        $data=array();
+      
+        
+
+        
+        $data['news_id'] = $request->news_id;
+        $data['news_date'] = $request->news_date;
+        
+       
+        DB::table('tbl_news')->where('id',$id)
+                ->update($data);
+         
+    
+        
+               
+
+        Toastr::success(' News update Successfull !!  ', 'Success');
+       return redirect::to('manage-news');
+
+     
+ }
+
+
+
+
+public function delete_news($id)
+{
+    $this->superadmin_auth_check();
+    
+    DB::table('tbl_news')
+            ->where('id',$id)
+            ->delete();
+        return redirect::to('/manage-news');
+}
+
+
 
 
 //Testimonial

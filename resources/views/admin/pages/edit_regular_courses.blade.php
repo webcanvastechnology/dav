@@ -92,7 +92,7 @@
                                         files="true">
 
                                         @csrf()
-
+                                        <input type="hidden" class="span6 " name="course_id" value="{{ $find_course->id }}" />
                                         <div class="control-group">
                                             <label class="control-label">Course title</label>
                                             <div class="controls">
@@ -124,8 +124,8 @@
                                                 <input type="text" class="span6 " name="level" value="{{ $find_course->level }}" />
                                                
                                             </div>
-                                        </div
-                                        <input type="hidden" class="span6 " name="course_id" value="{{ $find_course->id }}" />
+                                        </div>
+                                        
                                         <div class="control-group">
                                             <label class="control-label">Duration</label>
                                             <div class="controls">

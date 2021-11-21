@@ -587,6 +587,22 @@
               </li>
 
               <li class="sub-menu">
+                <a href="javascript:;" class="">
+                    <i class="icon-book"></i>
+                    <span>News</span>
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub">
+                   
+                    <li><a class="" href="{{URL::to('add-news')}}">Add news</a></li>
+                    <li><a class="" href="{{URL::to('manage-news')}}">Manage news</a></li>
+                     
+                    
+                    
+                </ul>
+            </li>
+
+              <li class="sub-menu">
                   <a href="javascript:;" class="">
                       <i class="icon-book"></i>
                       <span>Testimonial</span>

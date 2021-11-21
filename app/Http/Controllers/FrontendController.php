@@ -65,10 +65,12 @@ class FrontendController extends Controller
     {
         $all_category=DB::table('course_category')->get();
         $all_course=DB::table('regular_courses')->get();
+        $all_news=DB::table('tbl_news')->get();
         $all_testimonial=DB::table('tbl_testimonial')->get();
         return view('user.pages.home')
                 ->with('all_category',$all_category)
                 ->with('all_course',$all_course)
+                ->with('all_news',$all_news)
                 ->with('all_testimonial',$all_testimonial);
     }
 

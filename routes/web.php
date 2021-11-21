@@ -143,6 +143,17 @@ Route::get('/edit-date/{id}', [SuperAdminController::class,'edit_date']);
 Route::post('update-date', [SuperAdminController::class, 'updateDate'])->name('updatedate');
 Route::get('/delete-date/{id}', [SuperAdminController::class,'delete_date']);
 
+//News Management
+Route::get('/add-news', [SuperAdminController::class,'add_news']);
+
+Route::post('post-news', [SuperAdminController::class, 'postnews'])->name('postnews');
+
+Route::get('/manage-news', [SuperAdminController::class,'manage_news']);
+Route::get('/edit-news/{id}', [SuperAdminController::class,'edit_news']);
+Route::post('update-news', [SuperAdminController::class, 'update_news'])->name('updatenews');
+Route::get('/delete-news/{id}', [SuperAdminController::class,'delete_news']);
+
+
 //Testimonial
 
 Route::get('/add-testimonial', [SuperAdminController::class,'add_testimonial']);
