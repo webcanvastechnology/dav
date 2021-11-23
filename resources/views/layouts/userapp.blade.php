@@ -81,32 +81,20 @@
                             <li class="nav-item">
                                 <a href="{{ route('home') }}" class="nav-link active">
                                     Home
-                                    <i class='bx bx-chevron-down'></i>
+                                   
                                 </a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <a href="index.html" class="nav-link active">
-                                            Home One
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="index-2.html" class="nav-link">
-                                            Home Two
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="index-3.html" class="nav-link">
-                                            Home Three
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="index-4.html" class="nav-link">
-                                            Home Four
-                                        </a>
-                                    </li>
-                                </ul>
+                                
+                                   
                             </li>
                             <li class="nav-item">
+                                <a href="{{ route('home') }}" class="nav-link active">
+                                   About us
+                                   
+                                </a>
+                                
+                                   
+                            </li>
+                           {{--  <li class="nav-item">
                                 <a href="#" class="nav-link">
                                     Pages
                                     <i class='bx bx-chevron-down'></i>
@@ -227,39 +215,22 @@
                                         </a>
                                     </li>
                                 </ul>
-                            </li>
+                            </li> --}}
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    Class
-                                    <i class='bx bx-chevron-down'></i>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item">
+                                
                                         <a href="{{ route('courses') }}" class="nav-link">
                                             Courses
                                         </a>
-                                    </li>
                                     
-                                </ul>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    Blog
-                                    <i class='bx bx-chevron-down'></i>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <a href="blog.html" class="nav-link">
-                                            Blog
+                                
+                                        <a href="{{ route('courses') }}" class="nav-link">
+                                            Upcoming Events
                                         </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="blog-details.html" class="nav-link">
-                                            Blog Details
-                                        </a>
-                                    </li>
-                                </ul>
+                                    
                             </li>
+                            
                             <li class="nav-item">
                                 <a href="contact.html" class="nav-link">
                                     Contact
@@ -267,7 +238,7 @@
                             </li>
                         </ul>
                         <div class="others-options d-flex align-items-center">
-                            <div class="option-item">
+                            {{-- <div class="option-item">
                                 <div class="dropdown language-switcher d-inline-block">
                                     <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false">
@@ -296,7 +267,7 @@
                                         </a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="option-item">
                                 @guest
                                 @if (Route::has('login'))
@@ -384,7 +355,7 @@
                             </h2>
                         </div>
                         <p>The DaVinci Lab Team is dedicated to provide high quality education with the skills and competencies required to thrive in and drive the 21st century world. </p>
-                        <ul class="social">
+                        {{-- <ul class="social">
                             <li>
                                 <a href="#" target="_blank">
                                     <i class='bx bxl-facebook'></i>
@@ -405,7 +376,7 @@
                                     <i class='bx bxl-linkedin'></i>
                                 </a>
                             </li>
-                        </ul>
+                        </ul> --}}
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
@@ -456,8 +427,35 @@
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-footer-widget">
-                        <h3>Photo Gallery</h3>
-                        <ul class="photo-gallery-list">
+                        <h3>Get in Touch </h3>
+                        <ul class="social">
+                            <li>
+                                <a href="https://www.facebook.com/SuperTeacherEdu" target="_blank">
+                                    <i class='bx bxl-facebook'></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/SuperTeacher_ER" target="_blank">
+                                    <i class='bx bxl-twitter'></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/superteacheredureforms/" target="_blank">
+                                    <i class='bx bxl-instagram-alt'></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/channel/UCgkIGCVtehamD_cKyBPIJ3Q" target="_blank">
+                                    <i class='bx bxl-youtube'></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/superteacher-edu-reforms/" target="_blank">
+                                    <i class='bx bxl-linkedin'></i>
+                                </a>
+                            </li>
+                        </ul>
+                        {{-- <ul class="photo-gallery-list">
                             <li>
                                 <div class="box">
                                     <img src="assets/img/footer-gallery/footer-gallery-1.jpg" alt="image">
@@ -512,7 +510,7 @@
                                     <a href="#" target="_blank" class="link-btn"></a>
                                 </div>
                             </li>
-                        </ul>
+                        </ul> --}}
                     </div>
                 </div>
             </div>

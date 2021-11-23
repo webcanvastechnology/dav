@@ -7,12 +7,12 @@
         <div class="d-table-cell">
             <div class="container">
                 <div class="page-banner-content">
-                    <h2>Class</h2>
+                    <h2>Courses</h2>
                     <ul>
                         <li>
                             <a href="index.html">Home</a>
                         </li>
-                        <li>Class</li>
+                        <li>Courses</li>
                     </ul>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                 <div class="single-class">
                     <div class="class-image">
                         <a href="#">
-                            <img src="{{asset('course_image/'.$v_course->course_image)}}" alt="image">
+                            <img src="{{asset('regular_course_image/'.$v_course->course_image)}}" alt="image">
                         </a>
                     </div>
                     <div class="class-content">
@@ -52,8 +52,10 @@
                 </div>
             </div>
           @endforeach
-            <div class="col-lg-12 col-md-12">
+            {{-- <div class="col-lg-12 col-md-12">
                 <div class="pagination-area">
+
+                    {{ $all_course->links() }}
                     <a href="#" class="prev page-numbers">
                         <i class='bx bx-chevron-left'></i>
                     </a>
@@ -65,7 +67,7 @@
                         <i class='bx bx-chevron-right'></i>
                     </a>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
     <div class="class-shape">

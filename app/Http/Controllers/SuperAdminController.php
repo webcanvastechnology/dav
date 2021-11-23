@@ -979,7 +979,7 @@ public function edit_news($id)
         $find_news=DB::table('tbl_news')->where('id',$id)->first();
         
         $addnews=view('admin.pages.edit_news')
-                 ->with('find_news',$find_news);
+                 ->with('all_news',$find_news);
                        
          return view('admin.admin-master')
                 ->with('admin_main_content',$addnews);
@@ -988,7 +988,7 @@ public function edit_news($id)
 public function update_news(Request $request){
 
         $this->validate($request,array(
-            'news_id' => 'required',
+            'news_title' => 'required',
             
             'news_date' => 'required', 
             
@@ -998,16 +998,33 @@ public function update_news(Request $request){
              
         ));
 
-        $id=$request->id;
+        $id=$request->news_id;
         $data=array();
       
+        $images = $request->file('news_image');
+       
+        if($request->hasFile('news_image'))
+         {
+             foreach ($images as $image) {
+ 
+         $imageName = $image->getClientOriginalName();
+ 
+         $image->move(public_path('news_image'),$imageName);
+        
+        $data['news_image'] = $imageName;
+          
+          
+             }
+         }
+       
         
 
         
-        $data['news_id'] = $request->news_id;
+        $data['title'] = $request->news_title;
         $data['news_date'] = $request->news_date;
-        
-       
+        $data['news_details'] = $request->news_details;
+        $data['short_info'] = $request->short_info;
+        $data['status'] = 1;
         DB::table('tbl_news')->where('id',$id)
                 ->update($data);
          

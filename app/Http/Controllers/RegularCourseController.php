@@ -383,6 +383,152 @@ public function edit_regular_course($id)
 
      }
 
+
+     public function add_category()
+ {
+      $this->superadmin_auth_check();
+ 
+         $addcategory=view('admin.pages.add_course_category');
+                     
+                        
+          return view('admin.admin-master')
+                 ->with('admin_main_content',$addcategory);
+ }
+ 
+ public function postcategory(Request $request){
+ 
+         $this->validate($request,array(
+ 
+             
+             'category_name' => 'required',
+             
+             
+             'category_desc' => 'required',
+             
+             
+              
+         ));
+ 
+ 
+         $data=array();
+       
+         
+ 
+         /*  $images = $request->file('course_image');
+        
+        if($request->hasFile('course_image'))
+         {
+             foreach ($images as $image) {
+ 
+         $imageName = $image->getClientOriginalName();
+ 
+         $image->move(public_path('course_image'),$imageName); */
+        
+         $data['category_name'] = $request->category_name;
+        
+         $data['category_desc'] = $request->category_desc;
+         
+        
+        
+         $data['status']=1;
+        
+          
+         DB::table('course_category')
+                 ->insert($data);
+          
+   /*   } */
+         
+                
+ 
+         Toastr::success('Category added Successfull !!  ', 'Success');
+        return redirect::to('/manage-category');
+ 
+      }
+
+        public function manage_category()
+    {
+        $this->superadmin_auth_check();
+
+            
+
+            $all_category = DB::table('course_category')
+            
+                ->get();
+
+            $manage_category=view('admin.pages.course_category_list')
+                            ->with('all_category',$all_category);
+            return view('admin.admin-master')
+                    ->with('admin_main_content',$manage_category);
+    }
+
+    public function edit_category($id)
+    {
+        $this->superadmin_auth_check();
+
+            
+            $find_category = DB::table('course_category')->where('id',$id)->first();
+                            
+            $manage_category=view('admin.pages.edit_course_category')
+                            ->with('find_category',$find_category);
+            return view('admin.admin-master')
+                    ->with('admin_main_content',$manage_category);
+    }
+
+    public function updatecategory(Request $request){
+
+
+        $category_id=$request->category_id;
+ 
+        $this->validate($request,array(
+
+            
+            'category_name' => 'required',
+            
+            
+            'category_desc' => 'required',
+            
+            
+             
+        ));
+
+
+        $data=array();
+      
+        
+
+        /*  $images = $request->file('course_image');
+       
+       if($request->hasFile('course_image'))
+        {
+            foreach ($images as $image) {
+
+        $imageName = $image->getClientOriginalName();
+
+        $image->move(public_path('course_image'),$imageName); */
+       
+        $data['category_name'] = $request->category_name;
+       
+       
+        $data['category_desc'] = $request->category_desc;
+        
+       
+       
+        $data['status']=1;
+       
+         
+        DB::table('course_category')->where('id',$category_id)->update($data);
+                
+         
+  /*   } */
+        
+               
+
+        Toastr::success('Category Updated Successfull !!  ', 'Success');
+       return redirect::to('/manage-category');
+
+     }
+
+
   
 
 }

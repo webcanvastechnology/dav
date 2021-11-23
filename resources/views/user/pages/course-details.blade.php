@@ -7,12 +7,12 @@
         <div class="d-table-cell">
             <div class="container">
                 <div class="page-banner-content">
-                    <h2>Class Details</h2>
+                    <h2>Course Details</h2>
                     <ul>
                         <li>
                             <a href="index.html">Home</a>
                         </li>
-                        <li>Class Details</li>
+                        <li>Course Details</li>
                     </ul>
                 </div>
             </div>
@@ -24,14 +24,14 @@
 <section class="class-details-area pt-100 pb-70">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-md-12">
+            <div class="col-lg-12 col-md-12">
                 <div class="class-details-desc">
-                    <div class="class-desc-image">
+                    {{-- <div class="class-desc-image">
                         <img src="{{asset('regular_course_image/'.$find_course->course_image)}}" alt="image">
-                    </div>
+                    </div> --}}
                     <div class="tab class-details-tab">
                         <div class="row">
-                            <div class="col-lg-12 col-md-12">
+                            {{-- <div class="col-lg-12 col-md-12">
                                 <ul class="tabs">
                                     <li>
                                         <a href="#">
@@ -54,7 +54,7 @@
                                         </a>
                                     </li>
                                 </ul>
-                            </div>
+                            </div> --}}
                             <div class="col-lg-12 col-md-12">
                                 <div class="tab_content">
                                     <div class="tabs_item">
@@ -80,7 +80,7 @@
                                             </ul> --}}
                                         </div>
                                     </div>
-                                    <div class="tabs_item">
+                                    {{-- <div class="tabs_item">
                                         <div class="class-desc-content">
                                             <h3>Education Lessons</h3>
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -202,14 +202,14 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-12">
+           {{--  <div class="col-lg-4 col-md-12">
                 <div class="class-details-information">
                     <h3>Information</h3>
                     <ul>
@@ -246,7 +246,7 @@
                         <div id="validator-newsletter" class="form-result"></div>
                     </form>
                 </div>
-            </div>
+            </div> --}}
             <div class="col-lg-12 col-md-12">
                 <div class="related-class">
                     <h3>Audience Category</h3>
@@ -262,11 +262,11 @@
                  
                         <div class="col-lg-4 col-md-6">
                             <div class="single-class">
-                                <div class="class-image">
+                               {{--  <div class="class-image">
                                     <a href="#">
                                         <img src="{{asset('course_image/'.$find_course->course_image)}}" alt="image">
                                     </a>
-                                </div>
+                                </div> --}}
                                 <div class="class-content">
                                     <div class="price">₹{{$find_aud->price}}</div>
                                     <h3>

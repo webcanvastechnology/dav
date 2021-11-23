@@ -517,6 +517,8 @@
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub">
+                    <li><a class="" href="{{URL::to('add-category')}}">Add category</a></li>
+                    <li><a class="" href="{{URL::to('manage-category')}}">Manage category</a></li>
                    
                     <li><a class="" href="{{URL::to('add-regular-course')}}">Add course</a></li>
                     <li><a class="" href="{{URL::to('manage-regular-course')}}">Manage course</a></li>
