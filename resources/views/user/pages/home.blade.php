@@ -106,7 +106,7 @@
         <div class="section-title">
             <span>Courses</span>
             <h2>Course Categories</h2>
-            <span>Our Courses are divided into four categories</span>
+            <p>Our Courses are divided into four categories</p>
         </div>
         <div class="row">
             @foreach ($all_category as $v_category )
@@ -121,7 +121,7 @@
                     </div> --}}
                     <div class="class-content">
                         
-                        <h3>
+                        <h3 align="center">
                             <a href="#">{{ $v_category->category_name }}</a>
                         </h3>
                         <p>{!! $v_category->category_desc  !!} </p>
