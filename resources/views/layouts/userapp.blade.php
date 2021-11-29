@@ -63,8 +63,8 @@
             <div class="container">
                 <div class="main-responsive-menu">
                     <div class="logo">
-                        <a href="index.html">
-                            <img src="assets/img/DaVinci Lab.png" alt="image">
+                        <a href="{{ route('home') }}">
+                            <img src="assets/img/DaVinci Lab.png" alt="image"> 
                         </a>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
         <div class="main-navbar">
             <div class="container">
                 <nav class="navbar navbar-expand-md navbar-light">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="{{ route('home') }}">
                         <img src="assets/img/DaVinci Lab.png" alt="image">
                     </a>
                     <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
@@ -287,7 +287,7 @@
                 </nav>
             </div>
         </div>
-        <div class="others-option-for-responsive">
+        {{-- <div class="others-option-for-responsive">
             <div class="container">
                 <div class="dot-menu">
                     <div class="inner">
@@ -336,7 +336,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 
 
