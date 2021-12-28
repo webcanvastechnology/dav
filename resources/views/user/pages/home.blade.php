@@ -286,7 +286,7 @@
 </section> --}}
 
 
-<section class="teacher-area bg-ffffff pt-100 pb-70">
+{{-- <section class="teacher-area bg-ffffff pt-100 pb-70">
     <div class="container-fluid">
         <div class="section-title">
             <span>Our Mentors</span>
@@ -430,7 +430,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 
 
 <section class="testimonials-area pt-100 pb-100">
