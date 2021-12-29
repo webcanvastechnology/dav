@@ -6471,3 +6471,49 @@ blockquote p,
     -webkit-transform: translateY(-5px);
     transform: translateY(-5px)
 }
+
+
+/* custom css by amit */
+
+.sidebar-title {
+    padding: 5px 15px;
+  }
+  
+  .sidebar-title p {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .sidebar-nav {
+    padding: 15px 0;
+  }
+  
+  .sidebar-nav > .navbar-item {
+    padding: 6.5px 15px;
+  }
+  
+  .sidebar-nav > .navbar-item .navbar-link {
+    color: #343a40 !important;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  
+  .sidebar-nav > .navbar-item .navbar-link .navbar-icon {
+    font-size: 18px;
+    margin-right: 6px;
+  }
+  
+  .sidebar-nav > .navbar-item:hover .navbar-link,
+  .sidebar-nav > .navbar-item.active .navbar-link {
+    color: #396cf0 !important;
+  }
+  
+  .filter-card {
+    padding-bottom: 20px;
+  }
+  
+  .sticky-bar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 80px;
+  }
+  
