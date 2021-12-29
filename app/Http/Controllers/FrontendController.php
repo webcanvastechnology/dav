@@ -103,4 +103,13 @@ class FrontendController extends Controller
                 ->with('status',$status);
     }
 
+    public function curriculam()
+    {
+       
+        
+        return view('user.pages.curriculam');
+               
+                
+    }
+
 }

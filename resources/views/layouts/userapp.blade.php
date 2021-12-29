@@ -225,6 +225,13 @@
                             </li>
                             <li class="nav-item">
                                 
+                                <a href="{{ route('curriculam') }}" class="nav-link">
+                                   Curriculam
+                                </a>
+                            
+                    </li>
+                            <li class="nav-item">
+                                
                                         <a href="{{ route('courses') }}" class="nav-link">
                                             Upcoming Events
                                         </a>
