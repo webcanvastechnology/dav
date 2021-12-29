@@ -29,7 +29,7 @@ Route::get('/abcd', [FrontendController::class, 'abcd']);
 Auth::routes();
 
 Route::get('/', [FrontendController::class, 'home'])->name('home');
-Route::get('/curriculam-map', [FrontendController::class, 'curriculam'])->name('curriculam');
+Route::get('/curriculum-map', [FrontendController::class, 'curriculum'])->name('curriculum');
 Route::get('/courses', [FrontendController::class, 'courses'])->name('courses');
 Route::get('/course-details/{id}', [FrontendController::class, 'course_details']);
 Route::get('/apply-code',[FrontendController::class, 'apply_code'])->name('apply-code');

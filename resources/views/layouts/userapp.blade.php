@@ -225,8 +225,8 @@
                             </li>
                             <li class="nav-item">
                                 
-                                <a href="{{ route('curriculam') }}" class="nav-link">
-                                   Curriculam
+                                <a href="{{ route('curriculum') }}" class="nav-link">
+                                   Curriculum
                                 </a>
                             
                     </li>

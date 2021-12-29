@@ -103,7 +103,7 @@ class FrontendController extends Controller
                 ->with('status',$status);
     }
 
-    public function curriculam()
+    public function curriculum()
     {
        
         
