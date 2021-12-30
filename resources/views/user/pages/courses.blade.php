@@ -47,6 +47,7 @@
                                     aria-labelledby="grade" data-bs-parent="#accordionExample">
                                     <div class="accordion-body text-muted">
                                         <ul class="list-unstyled sidebar-nav mb-0">
+                                            @foreach($all_grade as $v_grade)
                                             <li class="navbar-item custom-navbar-item">
                                                 <div class="row">
                                                     <div class="col-md-2 col-sm-2 col-2">
@@ -54,43 +55,12 @@
                                                     </div>
 
                                                     <div class="col-md-10 col-sm-10 col-10">
-                                                        <p>Grades K - 2</p>
+                                                        <p>{!! $v_grade->grade_name !!}</p>
                                                     </div>
                                                 </div>
                                             </li>
-                                            <li class="navbar-item custom-navbar-item">
-                                                <div class="row">
-                                                    <div class="col-md-2 col-sm-2 col-2">
-                                                        <input class="form-check-input" type="checkbox" />
-                                                    </div>
-
-                                                    <div class="col-md-10 col-sm-10 col-10">
-                                                        <p>Grades 3 -5</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="navbar-item custom-navbar-item">
-                                                <div class="row">
-                                                    <div class="col-md-2 col-sm-2 col-2">
-                                                        <input class="form-check-input" type="checkbox" />
-                                                    </div>
-
-                                                    <div class="col-md-10 col-sm-10 col-10">
-                                                        <p>Grades 6 - 8</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="navbar-item custom-navbar-item">
-                                                <div class="row">
-                                                    <div class="col-md-2 col-sm-2 col-2">
-                                                        <input class="form-check-input" type="checkbox" />
-                                                    </div>
-
-                                                    <div class="col-md-10 col-sm-10 col-10">
-                                                        <p>Grades 9 - 12</p>
-                                                    </div>
-                                                </div>
-                                            </li>
+                                            @endforeach
+                                           
                                         </ul>
                                     </div>
                                 </div>
@@ -114,6 +84,7 @@
                                     aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                     <div class="accordion-body text-muted">
                                         <ul class="list-unstyled sidebar-nav mb-0">
+                                            @foreach($all_foundation as $v_foundation)
                                             <li class="navbar-item custom-navbar-item">
                                                 <div class="row">
                                                     <div class="col-md-2 col-sm-2 col-2">
@@ -121,43 +92,13 @@
                                                     </div>
 
                                                     <div class="col-md-10 col-sm-10 col-10">
-                                                        <p>Grades K - 2</p>
+                                                        <p>{!! $v_foundation->cs_foundation_name !!}</p>
                                                     </div>
                                                 </div>
                                             </li>
-                                            <li class="navbar-item custom-navbar-item">
-                                                <div class="row">
-                                                    <div class="col-md-2 col-sm-2 col-2">
-                                                        <input class="form-check-input" type="checkbox" />
-                                                    </div>
+                                            @endforeach
 
-                                                    <div class="col-md-10 col-sm-10 col-10">
-                                                        <p>Grades 3 -5</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="navbar-item custom-navbar-item">
-                                                <div class="row">
-                                                    <div class="col-md-2 col-sm-2 col-2">
-                                                        <input class="form-check-input" type="checkbox" />
-                                                    </div>
-
-                                                    <div class="col-md-10 col-sm-10 col-10">
-                                                        <p>Grades 6 - 8</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="navbar-item custom-navbar-item">
-                                                <div class="row">
-                                                    <div class="col-md-2 col-sm-2 col-2">
-                                                        <input class="form-check-input" type="checkbox" />
-                                                    </div>
-
-                                                    <div class="col-md-10 col-sm-10 col-10">
-                                                        <p>Grades 9 - 12</p>
-                                                    </div>
-                                                </div>
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -176,6 +117,7 @@
                                     aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                     <div class="accordion-body text-muted">
                                         <ul class="list-unstyled sidebar-nav mb-0">
+                                            @foreach($all_discover as $v_discover)
                                             <li class="navbar-item custom-navbar-item">
                                                 <div class="row">
                                                     <div class="col-md-2 col-sm-2 col-2">
@@ -183,43 +125,12 @@
                                                     </div>
 
                                                     <div class="col-md-10 col-sm-10 col-10">
-                                                        <p>Computing Devices and Components</p>
+                                                        <p>{!! $v_discover->cs_discover_name !!}</p>
                                                     </div>
                                                 </div>
                                             </li>
-                                            <li class="navbar-item custom-navbar-item">
-                                                <div class="row">
-                                                    <div class="col-md-2 col-sm-2 col-2">
-                                                        <input class="form-check-input" type="checkbox" />
-                                                    </div>
-
-                                                    <div class="col-md-10 col-sm-10 col-10">
-                                                        <p>Grades 3 -5</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="navbar-item custom-navbar-item">
-                                                <div class="row">
-                                                    <div class="col-md-2 col-sm-2 col-2">
-                                                        <input class="form-check-input" type="checkbox" />
-                                                    </div>
-
-                                                    <div class="col-md-10 col-sm-10 col-10">
-                                                        <p>Grades 6 - 8</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="navbar-item custom-navbar-item">
-                                                <div class="row">
-                                                    <div class="col-md-2 col-sm-2 col-2">
-                                                        <input class="form-check-input" type="checkbox" />
-                                                    </div>
-
-                                                    <div class="col-md-10 col-sm-10 col-10">
-                                                        <p>Grades 9 - 12</p>
-                                                    </div>
-                                                </div>
-                                            </li>
+                                            @endforeach
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -238,6 +149,7 @@
                                     aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                                     <div class="accordion-body text-muted">
                                         <ul class="list-unstyled sidebar-nav mb-0">
+                                            @foreach($all_expediion as $v_expediion)
                                             <li class="navbar-item custom-navbar-item">
                                                 <div class="row">
                                                     <div class="col-md-2 col-sm-2 col-2">
@@ -245,43 +157,12 @@
                                                     </div>
 
                                                     <div class="col-md-10 col-sm-10 col-10">
-                                                        <p>Grades K - 2</p>
+                                                        <p>{!! $v_expediion->cs_expediion_name !!}</p>
                                                     </div>
                                                 </div>
                                             </li>
-                                            <li class="navbar-item custom-navbar-item">
-                                                <div class="row">
-                                                    <div class="col-md-2 col-sm-2 col-2">
-                                                        <input class="form-check-input" type="checkbox" />
-                                                    </div>
-
-                                                    <div class="col-md-10 col-sm-10 col-10">
-                                                        <p>Grades 3 -5</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="navbar-item custom-navbar-item">
-                                                <div class="row">
-                                                    <div class="col-md-2 col-sm-2 col-2">
-                                                        <input class="form-check-input" type="checkbox" />
-                                                    </div>
-
-                                                    <div class="col-md-10 col-sm-10 col-10">
-                                                        <p>Grades 6 - 8</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="navbar-item custom-navbar-item">
-                                                <div class="row">
-                                                    <div class="col-md-2 col-sm-2 col-2">
-                                                        <input class="form-check-input" type="checkbox" />
-                                                    </div>
-
-                                                    <div class="col-md-10 col-sm-10 col-10">
-                                                        <p>Grades 9 - 12</p>
-                                                    </div>
-                                                </div>
-                                            </li>
+                                            @endforeach
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -307,6 +188,7 @@
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body text-muted">
                                         <ul class="list-unstyled sidebar-nav mb-0">
+                                            @foreach($all_tools as $v_tools)
                                             <li class="navbar-item custom-navbar-item">
                                                 <div class="row">
                                                     <div class="col-md-2 col-sm-2 col-2">
@@ -314,43 +196,12 @@
                                                     </div>
 
                                                     <div class="col-md-10 col-sm-10 col-10">
-                                                        <p>Grades K - 2</p>
+                                                        <p>{!! $v_tools->tools_name !!}</p>
                                                     </div>
                                                 </div>
                                             </li>
-                                            <li class="navbar-item custom-navbar-item">
-                                                <div class="row">
-                                                    <div class="col-md-2 col-sm-2 col-2">
-                                                        <input class="form-check-input" type="checkbox" />
-                                                    </div>
-
-                                                    <div class="col-md-10 col-sm-10 col-10">
-                                                        <p>Grades 3 -5</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="navbar-item custom-navbar-item">
-                                                <div class="row">
-                                                    <div class="col-md-2 col-sm-2 col-2">
-                                                        <input class="form-check-input" type="checkbox" />
-                                                    </div>
-
-                                                    <div class="col-md-10 col-sm-10 col-10">
-                                                        <p>Grades 6 - 8</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="navbar-item custom-navbar-item">
-                                                <div class="row">
-                                                    <div class="col-md-2 col-sm-2 col-2">
-                                                        <input class="form-check-input" type="checkbox" />
-                                                    </div>
-
-                                                    <div class="col-md-10 col-sm-10 col-10">
-                                                        <p>Grades 9 - 12</p>
-                                                    </div>
-                                                </div>
-                                            </li>
+                                            @endforeach
+                                           
                                         </ul>
                                     </div>
                                 </div>

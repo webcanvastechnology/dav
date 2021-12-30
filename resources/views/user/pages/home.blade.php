@@ -8,13 +8,14 @@
                 <div class="container-fluid">
                     <div class="row align-items-center">
                         <div class="col-lg-6">
-                            <div class="main-banner-content">
-                               
+                            <div class="main-banner-content ">
+                                <div class="badge badge-primary text-wrap" style="width: 90%;">
                                 <h1>“Everyone has <br> a Da Vinci within”
                                 </h1>
                                 <span>Believe in yourself. Let it out to create wonders !</span>
                                 
-                                <p>DaVinci Lab provides the best learning experience in coding, physical computing and STEM education. It is founded under the core principles of competency based learning and interdisciplinary approach. DaVinci Lab is backed by a well-designed curriculum, scientific assessment framework and team of talented academicians and trainers.</p>
+                                <p >DaVinci Lab provides the best learning experience in coding, physical computing and STEM education. It is founded under the core principles of competency based learning and interdisciplinary approach. DaVinci Lab is backed by a well-designed curriculum, scientific assessment framework and team of talented academicians and trainers.</p>
+                                </div>
                                 <div class="banner-btn">
                                     <a href="#" class="default-btn">
                                         Learn More

@@ -39,7 +39,7 @@
 
     <link rel="stylesheet" href="{{ asset('assets/css/rtl.css')}}">
     <title>DaVinci Lab</title>
-    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png')}}">
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/DaVinci Fevikon.png')}}">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </head>
@@ -64,7 +64,7 @@
                 <div class="main-responsive-menu">
                     <div class="logo">
                         <a href="{{ route('home') }}">
-                            <img src="assets/img/DaVinci Lab.png" alt="image"> 
+                            <img src="assets/img/__ DaVinci Logo Rectangle.png" alt="image"> 
                         </a>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
                     <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a href="{{ route('home') }}" class="nav-link active">
+                                <a href="{{ route('home') }}" class="nav-link {{ Request::routeIs('home') ? 'active' : '' }}">
                                     Home
                                    
                                 </a>
@@ -87,7 +87,7 @@
                                    
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('home') }}" class="nav-link active">
+                                <a href="{{ route('about') }}" class="nav-link {{ Request::routeIs('about') ? 'active' : '' }}">
                                    About us
                                    
                                 </a>
@@ -218,14 +218,14 @@
                             </li> --}}
                             <li class="nav-item">
                                 
-                                        <a href="{{ route('courses') }}" class="nav-link">
+                                        <a href="{{ route('courses') }}" class="nav-link {{ Request::routeIs('courses') ? 'active' : '' }}">
                                             Courses
                                         </a>
                                     
                             </li>
                             <li class="nav-item">
                                 
-                                <a href="{{ route('curriculum') }}" class="nav-link">
+                                <a href="{{ route('curriculum') }}" class="nav-link {{ Request::routeIs('curriculum') ? 'active' : '' }}">
                                    Curriculum
                                 </a>
                             

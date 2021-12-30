@@ -77,9 +77,18 @@ class FrontendController extends Controller
     public function courses()
     {
         $all_course=DB::table('regular_courses')->get();
-        
+        $all_grade=DB::table('grades')->get();
+        $all_foundation=DB::table('cs_foundation')->get();
+       $all_discover=DB::table('cs_discover')->get();
+       $all_expediion=DB::table('cs_expediion')->get();
+       $all_tools=DB::table('tools')->get();
         return view('user.pages.courses')
-                ->with('all_course',$all_course);
+                ->with('all_course',$all_course)
+                ->with('all_grade',$all_grade)
+                ->with('all_foundation',$all_foundation)
+                ->with('all_expediion',$all_expediion)
+                ->with('all_discover',$all_discover)
+                ->with('all_tools',$all_tools);
                 
     }
 
