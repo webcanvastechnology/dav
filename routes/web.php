@@ -41,6 +41,9 @@ Route::get('confirm-course', [RegularCoursePayment::class, 'confirm_course'])->n
 Route::post('regular-payment-process', [RegularCoursePayment::class, 'paymentProcess']);
 
 Route::get('regular-payment-success/{app_id}', [RegularCoursePayment::class, 'paymentSuccess']);
+
+Route::post('/search', [FrontendController::class, 'load_products'])->name('load_products');
+
 /*
 Start Admin Panel
 

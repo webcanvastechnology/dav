@@ -120,5 +120,15 @@ class FrontendController extends Controller
                
                 
     }
+    public function load_product()
+    {
+       
+        
+        return view('user.pages.curriculam');
+               
+                
+    }
+
+   
 
 }

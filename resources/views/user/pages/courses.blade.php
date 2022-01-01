@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 <div class="page-banner-area item-bg1">
     <div class="d-table">
         <div class="d-table-cell">
@@ -25,6 +26,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-3">
+                
                 <div class="row filter-card">
                     <div class="rounded shadow overflow-hidden sticky-bar" style="padding-bottom: 10px">
                         <div class="sidebar-title">
@@ -47,21 +49,35 @@
                                     aria-labelledby="grade" data-bs-parent="#accordionExample">
                                     <div class="accordion-body text-muted">
                                         <ul class="list-unstyled sidebar-nav mb-0">
-                                            @foreach($all_grade as $v_grade)
+                                           
+                                            @foreach($all_grade as $key => $grade)
+
+                                            <?php 
+                                            
+                                                if(isset($_POST['grade_name'])) {
+                                                    if(in_array(str_replace(' ','_',$grade['grade_name']),$_POST['grade_name'])) {
+                                                        $gradeCheck ='checked="checked"';
+                                                    } else {
+                                                        $gradeCheck="";
+                                                    }
+                                                }
+                                            ?>
+                                            
                                             <li class="navbar-item custom-navbar-item">
                                                 <div class="row">
                                                     <div class="col-md-2 col-sm-2 col-2">
-                                                        <input class="form-check-input" type="checkbox" />
+                                                        <input class="form-check-input" type="checkbox" name="grades[]"  value="<?php echo str_replace(' ','_',$grade->grade_name); ?>" <?php echo @$gradeCheck; ?>/>
                                                     </div>
 
                                                     <div class="col-md-10 col-sm-10 col-10">
-                                                        <p>{!! $v_grade->grade_name !!}</p>
+                                                        <p>{!! $grade->grade_name !!}</p>
                                                     </div>
                                                 </div>
                                             </li>
                                             @endforeach
                                            
                                         </ul>
+                                    </form>
                                     </div>
                                 </div>
                             </div>
@@ -209,11 +225,12 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
             <div class="col-md-9">
                 <div class="row">
             @foreach ($all_course as $v_course )
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-6 col-md-6">
                 <div class="single-class">
                     <div class="class-image">
                         <a href="#">
@@ -269,4 +286,63 @@
         </div>
     </div>
 </section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    var totalRecord = 0;
+	var grade = getCheckboxValues('grades');
+   /*  var brand = getCheckboxValues('brand');
+    var material = getCheckboxValues('material');
+    var size = getCheckboxValues('size');
+    var totalData = $("#totalRecords").val();
+	var sorting = getCheckboxValues('sorting'); */
+	$.ajax({
+		type: 'POST',
+		url : "/search",
+		dataType: "json",			
+		data:{grade:grade},
+		success: function (data) {
+			$("#results").append(data.products);
+			totalRecord++;
+		}
+	});	
+    $(window).scroll(function() {
+		scrollHeight = parseInt($(window).scrollTop() + $(window).height());		
+        if(scrollHeight == $(document).height()){	
+            if(totalRecord <= totalData){
+                loading = true;
+                $('.loader').show();                
+				$.ajax({
+					type: 'POST',
+					url : "load_products.php",
+					dataType: "json",			
+					data:{totalRecord:totalRecord, brand:brand, material:material, size:size},
+					success: function (data) {
+						$("#results").append(data.products);
+						$('.loader').hide();
+						totalRecord++;
+					}
+				});
+            }            
+        }
+    });
+    function getCheckboxValues(checkboxClass){
+        var values = new Array();
+		$("."+checkboxClass+":checked").each(function() {
+		   values.push($(this).val());
+		});
+        return values;
+    }
+    $('.sort_rang').change(function(){
+        $("#search_form").submit();
+        return false;
+    });
+	$(document).on('click', 'label', function() {
+		if($('input:checkbox:checked')) {
+			$('input:checkbox:checked', this).closest('label').addClass('active');
+		}
+	});	
+});
+</script>
+
 @endsection
