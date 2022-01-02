@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}"> 
+    
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -15,7 +15,10 @@
     <meta name="keywords"
         content="Da-Vinci, DaVinci, DaVincilab, Codekick, SuperTeacher, Coding, Computer Programming, CS for kids, Coding for Kids, Physical Computing, Creative Computing, Robotics, STEM education, STEAM Education, Competency based education, Interdisciplinary Approach, NEP 2020, National Education policy on coding, DaVinci Junior, National Coding Olympiad Junior">
 
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.rtl.min.css')}}">
+    {{-- <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.rtl.min.css')}}"> --}}
+
+
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css')}}">
 
     <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css')}}">
 
@@ -37,7 +40,9 @@
 
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css')}}">
 
-    <link rel="stylesheet" href="{{ asset('assets/css/rtl.css')}}">
+    {{-- <link rel="stylesheet" href="{{ asset('assets/css/rtl.css')}}"> --}}
+
+    
     <title>DaVinci Lab</title>
     <link rel="icon" type="image/png" href="{{ asset('assets/img/DaVinci Fevikon.png')}}">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -56,6 +61,8 @@
             </div>
         </div>
     </div> --}}
+    
+
 
 
     <div class="navbar-area">
@@ -64,7 +71,7 @@
                 <div class="main-responsive-menu">
                     <div class="logo">
                         <a href="{{ route('home') }}">
-                            {{-- <img src="assets/img/DaVinci-Logo-Rectangle.png" alt="image">  --}}
+                             <img src="assets/img/DaVinci-Logo-Rectangle.png" alt="image">
                         </a>
                     </div>
                 </div>
@@ -79,22 +86,24 @@
                     <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a href="{{ route('home') }}" class="nav-link {{ Request::routeIs('home') ? 'active' : '' }}">
+                                <a href="{{ route('home') }}"
+                                    class="nav-link {{ Request::routeIs('home') ? 'active' : '' }}">
                                     Home
-                                   
+
                                 </a>
-                                
-                                   
+
+
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('about') }}" class="nav-link {{ Request::routeIs('about') ? 'active' : '' }}">
-                                   About us
-                                   
+                                <a href="{{ route('about') }}"
+                                    class="nav-link {{ Request::routeIs('about') ? 'active' : '' }}">
+                                    About us
+
                                 </a>
-                                
-                                   
+
+
                             </li>
-                           {{--  <li class="nav-item">
+                            {{--  <li class="nav-item">
                                 <a href="#" class="nav-link">
                                     Pages
                                     <i class='bx bx-chevron-down'></i>
@@ -217,27 +226,29 @@
                                 </ul>
                             </li> --}}
                             <li class="nav-item">
-                                
-                                        <a href="{{ route('courses') }}" class="nav-link {{ Request::routeIs('courses') ? 'active' : '' }}">
-                                            Courses
-                                        </a>
-                                    
-                            </li>
-                            <li class="nav-item">
-                                
-                                <a href="{{ route('curriculum') }}" class="nav-link {{ Request::routeIs('curriculum') ? 'active' : '' }}">
-                                   Curriculum
+
+                                <a href="{{ route('courses') }}"
+                                    class="nav-link {{ Request::routeIs('courses') ? 'active' : '' }}">
+                                    Courses
                                 </a>
-                            
-                    </li>
-                            <li class="nav-item">
-                                
-                                        <a href="{{ route('courses') }}" class="nav-link">
-                                            Upcoming Events
-                                        </a>
-                                    
+
                             </li>
-                            
+                            <li class="nav-item">
+
+                                <a href="{{ route('curriculum') }}"
+                                    class="nav-link {{ Request::routeIs('curriculum') ? 'active' : '' }}">
+                                    Curriculum
+                                </a>
+
+                            </li>
+                            <li class="nav-item">
+
+                                <a href="{{ route('courses') }}" class="nav-link">
+                                    Upcoming Events
+                                </a>
+
+                            </li>
+
                             <li class="nav-item">
                                 <a href="contact.html" class="nav-link">
                                     Contact
@@ -361,7 +372,8 @@
                                 <a href="index.html"><img src="assets/img/DaVinci Lab.png" alt="image"></a>
                             </h2>
                         </div>
-                        <p>The DaVinci Lab Team is dedicated to provide high quality education with the skills and competencies required to thrive in and drive the 21st century world. </p>
+                        <p>The DaVinci Lab Team is dedicated to provide high quality education with the skills and
+                            competencies required to thrive in and drive the 21st century world. </p>
                         {{-- <ul class="social">
                             <li>
                                 <a href="#" target="_blank">
@@ -394,7 +406,7 @@
                                 <i class='bx bxs-phone'></i>
                                 <span> Phone</span>
                                 <a href="tel:+91 9908442000">+91 9908442000</a>
-                               
+
                             </li>
                             <li>
                                 <i class='bx bx-envelope'></i>
@@ -428,7 +440,7 @@
                             <li>
                                 <a href="#">Contact Us</a>
                             </li>
-                            
+
                         </ul>
                     </div>
                 </div>
@@ -530,7 +542,7 @@
             <div class="copyright-area-content">
                 <p>
                     Copyright © 2021 DaVinci Lab. All Rights Reserved by
-                   
+
                 </p>
             </div>
         </div>

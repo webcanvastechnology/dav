@@ -249,7 +249,7 @@
             </div> --}}
             <div class="col-lg-12 col-md-12">
                 <div class="related-class">
-                    <h3>Audience Category</h3>
+                    {{-- <h3>Audience Category</h3> --}}
                     <?php if($status==1){ ?>
 
                         <?php $auds = json_decode($find_course->audience_category ); ?>
@@ -270,7 +270,7 @@
                                 <div class="class-content">
                                     <div class="price">₹{{$find_aud->price}}</div>
                                     <h3>
-                                        <a href="#">{{$find_aud->aud_name}}</a>
+                                        <a href="#">{{$find_aud->aud_title}}</a>
                                     </h3>
                                     <p>{!! $find_aud->aud_short_desc !!}</p>
                                     {{-- <ul class="class-list">
