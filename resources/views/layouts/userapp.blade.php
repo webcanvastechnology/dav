@@ -71,7 +71,7 @@
                 <div class="main-responsive-menu">
                     <div class="logo">
                         <a href="{{ route('home') }}">
-                             <img src="assets/img/DaVinci-Logo-Rectangle.png" alt="image">
+                             <img src="{{asset('assets/img/DaVinci-Logo-Rectangle.png')}}" alt="image">
                         </a>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
             <div class="container">
                 <nav class="navbar navbar-expand-md navbar-light">
                     <a class="navbar-brand" href="{{ route('home') }}">
-                        <img src="assets/img/DaVinci-Logo-Rectangle.png" alt="image">
+                        <img src="{{asset('assets/img/DaVinci-Logo-Rectangle.png')}}" alt="image">
                     </a>
                     <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                         <ul class="navbar-nav">
