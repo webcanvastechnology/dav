@@ -119,7 +119,8 @@ Route::post('post-audience', [RegularCourseController::class, 'postaudience'])->
 Route::get('/manage-audience', [RegularCourseController::class,'manage_audience']);
 Route::get('/edit-audience/{id}', [RegularCourseController::class,'edit_audience']);
 Route::post('update-audience', [RegularCourseController::class, 'updateaudience'])->name('updateaudiencecategory');
-
+Route::get('/update-payment-link/{id}/{st}', [RegularCourseController::class,'payment_link']);
+Route::get('/update-status/{id}/{st}', [RegularCourseController::class,'status']);
 /* Course Category */
 Route::get('/add-category', [RegularCourseController::class,'add_category']);
 Route::post('post-category', [RegularCourseController::class, 'postcategory'])->name('postcoursecategory');

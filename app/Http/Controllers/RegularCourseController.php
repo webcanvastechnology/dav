@@ -383,6 +383,33 @@ public function edit_regular_course($id)
 
      }
 
+     public function status($id,$st){
+        $this->superadmin_auth_check();
+        if($st==0){
+         DB::table('aud_category')->where('aud_id',$id)->update(['status' => 1]);
+        }
+         else{
+         DB::table('aud_category')->where('aud_id',$id)->update(['status' => 0]);
+         }
+
+         Toastr::success('Status Updated Successfull !!  ', 'Success');
+         return redirect::to('/manage-audience');
+         
+     }
+
+     public function payment_link($id,$st){
+        $this->superadmin_auth_check();
+        if($st==0){
+         DB::table('aud_category')->where('aud_id',$id)->update(['payment_link' => 1]);
+        }
+         else{
+         DB::table('aud_category')->where('aud_id',$id)->update(['payment_link' => 0]);
+         }
+
+         Toastr::success('Payment Link Updated Successfull !!  ', 'Success');
+         return redirect::to('/manage-audience');
+         
+     }
 
      public function add_category()
  {

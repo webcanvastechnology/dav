@@ -41,7 +41,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css')}}">
 
     {{-- <link rel="stylesheet" href="{{ asset('assets/css/rtl.css')}}"> --}}
-
+    <link rel="stylesheet" href="{{asset('frontend')}}/toaster/toastr.min.css">
     
     <title>DaVinci Lab</title>
     <link rel="icon" type="image/png" href="{{ asset('assets/img/DaVinci Fevikon.png')}}">
@@ -580,6 +580,8 @@
     <script src="{{ asset('assets/js/contact-form-script.js')}}"></script>
 
     <script src="{{ asset('assets/js/main.js')}}"></script>
+    <script src="{{asset('frontend')}}/toaster/toastr.min.js"></script>
+    {!! Toastr::message() !!}
 </body>
 
 

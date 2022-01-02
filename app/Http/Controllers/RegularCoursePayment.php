@@ -44,6 +44,8 @@ class RegularCoursePayment extends Controller
             'email' => 'required',
 
         ));
+
+        $payment_link=$request->payment_link;
         $data = array();
         $data['application_id'] = 'REG'.rand(100000, 999999);
         $data['name'] = $request->name;
@@ -71,8 +73,16 @@ class RegularCoursePayment extends Controller
             ->insertGetId($data);
         Session::put('id', $customer_id);
 
+       $payment= DB::table('aud_category')->where('aud_id',$request->sub_course_id)->first();
+       if($payment_link != 0){
+
         Toastr::success(' Registration Successfull !! Please proceed for the payment.  ', 'Success');
         return redirect()->route('confirm-course');
+       }
+       else{
+        Toastr::success(' Thank you for registering with us. One of our team members will come in contact with you soon. ', 'Success');
+        return redirect()->route('courses');
+       }
 
     }
 

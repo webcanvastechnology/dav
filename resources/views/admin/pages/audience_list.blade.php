@@ -108,6 +108,7 @@
                                            <th>MIN</th>
                                             <th>MAX</th>
                                             <th>Price</th>
+                                            <th>Payment Link</th>
                                              <th>Status</th>
                                              <th>Edit</th>
                                               
@@ -128,11 +129,32 @@
                                          <td>{{$v_audience->aud_max}}</td>
                                          <td>{{$v_audience->price}}</td>
                                          <td>
+                                            <?php
+                                                if($v_audience->payment_link==1)
+                                                {
+                                                ?>
+                                      <a class="btn btn-success" href="{{URL::to('/update-payment-link/'.$v_audience->aud_id.'/'.$v_audience->payment_link)}}">
+                                                  <i class="icon-ok icon-white"></i> Publish
+                                                </a>
+                                                <?php
+                                              }
+                                                elseif($v_audience->payment_link==0)
+                                                {
+                                                ?>
+                                      <a class="btn btn-danger" href="{{URL::to('/update-payment-link/'.$v_audience->aud_id.'/'.$v_audience->payment_link)}}">
+                                                  <i class="icon-ban-circle icon-white"></i> UnPublish 
+                                                </a>
+                                            <?php
+                                          }
+  
+                                          ?>
+                                        </td>
+                                         <td>
                                           <?php
                                               if($v_audience->status==1)
                                               {
                                               ?>
-                                    <a class="btn btn-success" href="{{URL::to('/update-status-audience/'.$v_audience->aud_id.'/'.$v_audience->status)}}">
+                                    <a class="btn btn-success" href="{{URL::to('/update-status/'.$v_audience->aud_id.'/'.$v_audience->status)}}">
                                                 <i class="icon-ok icon-white"></i> Publish
                                               </a>
                                               <?php
@@ -140,7 +162,7 @@
                                               elseif($v_audience->status==0)
                                               {
                                               ?>
-                                    <a class="btn btn-danger" href="{{URL::to('/update-status-audience/'.$v_audience->aud_id.'/'.$v_audience->status)}}">
+                                    <a class="btn btn-danger" href="{{URL::to('/update-status/'.$v_audience->aud_id.'/'.$v_audience->status)}}">
                                                 <i class="icon-ban-circle icon-white"></i> UnPublish 
                                               </a>
                                           <?php
@@ -148,6 +170,7 @@
 
                                         ?>
                                       </td>
+
 
                                       <td> <a class="btn btn-info" href="{{URL::to('/edit-audience/'.$v_audience->aud_id)}}">
                                                 <i class="icon-edit icon-white"></i> 

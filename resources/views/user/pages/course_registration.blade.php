@@ -8,6 +8,8 @@
             <h2>Course Registration</h2>
             <form method="post" name="user_form" action="{{ route('postregistration-course') }}">
                 @csrf()
+                <input type="hidden" class="form-control"  
+                        name="payment_link" value="{{ $find_aud_course->payment_link }}">
                 <div class="row">
                     <div class="col-sm-6 col-md-6">
                         <div class="form-group">
