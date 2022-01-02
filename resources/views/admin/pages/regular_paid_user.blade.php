@@ -2,20 +2,20 @@
 @section('admin_main_content')
 
 <script type="text/javascript">
-    function check_delete()
-    {
-        chk=confirm("Are you sure to delete item ?");
-        if(chk)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-    
-</script>
+				function check_delete()
+				{
+					chk=confirm("Are you sure to delete item ?");
+					if(chk)
+					{
+						return true;
+					}
+					else
+					{
+						return false;
+					}
+				}
+				
+			</script>
 
 
  <div class="container-fluid">
@@ -72,14 +72,14 @@
                      <!-- BEGIN EXAMPLE TABLE widget-->
                      <div class="widget purple">
                          <div class="widget-title">
-                             <h4><i class="icon-reorder"></i> Contact Table</h4>
+                             <h4><i class="icon-reorder"></i> Editable Table</h4>
                             <span class="tools">
                                 <a href="javascript:;" class="icon-chevron-down"></a>
                                 <a href="javascript:;" class="icon-remove"></a>
                             </span>
                          </div>
                          <div class="widget-body">
-                             <div>
+                             <div class="table-responsive">
                                  <div class="clearfix">
                                     <!-- <div class="btn-group">
                                          <button id="editable-sample_new" class="btn green">
@@ -102,51 +102,60 @@
                                      <thead>
                                      <tr>
                                          <th>ID</th>
+                                         <th>Reg.ID</th>
                                          <th>Name</th>
-                                         
-                                             <th>Status</th>
-                                             <th>Edit</th>
-                                             <th>Delete</th>
+                                          <th>ORG Name</th>
+                                           <th>Email</th>
+                                            <th>Phone</th>
+                                             <th>City</th>
+                                              <th>Course</th>
+                                              <th>Date</th>
+                                               <th>Time</th>
+                                               <th>Amount</th>
+                                               
+                                               <th>Trans time</th>
+                                               <th>Status</th>
                                          
                                          
                                         
                                      </tr>
                                      </thead>
                                      <tbody>
-                                     	@foreach($all_category as $v_category)
+                                     	@foreach($all_user as $v_user)
                                      <tr class="">
-                                         <td>{{$v_category->id}}</td>
-                                         <td>{{$v_category->category_name}}</td>
+                                         <td>{{$v_user->id}}</td>
+                                          <td>{{$v_user->application_id}}</td>
+                                         <td>{{$v_user->name}}</td>
+                                         <td>{{$v_user->org_name}}</td>
+                                         <td>{{$v_user->email}}</td>
+                                         <td>{{$v_user->phone}}</td>
+                                         <td>{{$v_user->city}}</td>
+                                         <td>{{$v_user->course_title}}</td>
                                          
-                                         <td>
-                                          <?php
-                                              if($v_category->status==1)
-                                              {
-                                              ?>
-                                    <a class="btn btn-success" href="{{URL::to('/update-category-status/'.$v_category->id.'/'.$v_category->status)}}">
-                                                <i class="icon-ok icon-white"></i> Publish
-                                              </a>
-                                              <?php
-                                            }
-                                              elseif($v_category->status==0)
-                                              {
-                                              ?>
-                                    <a class="btn btn-danger" href="{{URL::to('/update-category-status/'.$v_category->id.'/'.$v_category->status)}}">
-                                                <i class="icon-ban-circle icon-white"></i> UnPublish 
-                                              </a>
-                                          <?php
-                                        }
+                                         <td>{{$v_user->fees}}</td>
+                                        
+                                         <td>{{$v_user->created_at}}</td>
+                                         <td><?php
+									if($v_user->status==1)
+									{
+									?>
+				<a class="btn btn-success" href="#">
+										<i class="icon-ok icon-white"></i> Paid
+									</a>
+									<?php
+								}
+									elseif($v_user->status==0)
+									{
+									?>
+				<a class="btn btn-danger" href="#">
+										<i class="icon-ban-circle icon-white"></i> Unpaid 
+									</a>
+									<?php
+								}
 
-                                        ?>
-                                      </td>
-
-                                      <td> <a class="btn btn-info" href="{{URL::to('/edit-category/'.$v_category->id)}}">
-                                                <i class="icon-edit icon-white"></i> 
-                                              </a></td>
-                             <td> <a class="btn btn-white" onclick="return check_delete();" href="{{URL::to('/delete-regular-category/'.$v_category->id)}}">
-                                                <i class="icon-trash " style="color:red"></i> 
-                                              </a></td>
-                                      
+								?></td>
+                                         
+                                       
                                      </tr>
                                     @endforeach
                                    
@@ -161,6 +170,8 @@
 
             <!-- END EDITABLE TABLE widget-->
          </div>
+
+   
 
     <script type="text/javascript">
 

@@ -555,7 +555,26 @@ public function edit_regular_course($id)
 
      }
 
+     public function category_status($id,$st){
+        $this->superadmin_auth_check();
+        if($st==0)
+         DB::table('course_category')->where('id',$id)->update(['status' => 1]);
+         else
+         DB::table('course_category')->where('id',$id)->update(['status' => 0]);
+     return redirect::to('manage-category');
+         
+     }
+    
 
+     public function delete_category($id)
+{
+    $this->superadmin_auth_check();
+    
+    DB::table('course_category')
+            ->where('id',$id)
+            ->delete();
+        return redirect::to('/manage-category');
+}
   
 
 }

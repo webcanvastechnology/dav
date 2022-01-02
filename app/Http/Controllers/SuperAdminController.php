@@ -75,7 +75,25 @@ public function superadmin_auth_check()
 
 
 
+public function regular_paid_user()
+{
+     $this->superadmin_auth_check();
 
+        
+
+        $all_user = DB::table('events_regular')
+            
+            ->join('regular_courses','events_regular.course_id','=','regular_courses.id')
+            
+            ->select('events_regular.*','regular_courses.course_title')
+            ->orderBy('events_regular.id', 'desc')
+            ->get();
+
+        $manage_user=view('admin.pages.regular_paid_user')
+                        ->with('all_user',$all_user);
+         return view('admin.admin-master')
+                ->with('admin_main_content',$manage_user);
+}
 
 public function paid_user()
 {

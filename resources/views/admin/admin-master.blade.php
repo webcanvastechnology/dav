@@ -338,104 +338,10 @@
                   </a>
               </li>
               
-              <li class="sub-menu">
-                <a href="javascript:;" class="">
-                    <i class="icon-book"></i>
-                    <span>Mock Test</span>
-                    <span class="arrow"></span>
-                </a>
-                <ul class="sub">
-                   
-                   
-                   
-                    <li><a class="" href="{{URL::to('mocktest-user')}}">Mock Test User</a></li>
-                    <li><a class="" href="{{URL::to('cbse-user')}}">CBSE Test User</a></li>
-                    <li><a class="" href="{{URL::to('cbse-school-user')}}">CBSE School User</a></li>
-                    
-                </ul>
-            </li>
-            <li class="sub-menu">
-                <a href="javascript:;" class="">
-                    <i class="icon-book"></i>
-                    <span>Step Up User</span>
-                    <span class="arrow"></span>
-                </a>
-                <ul class="sub">
-                    <li><a class="" href="{{URL::to('stepup-paid-user/19')}}">Paid User For SAD</a></li>
-                    <li><a class="" href="{{URL::to('stepup-unpaid-user/19')}}">UnPaid User For SAD</a></li>
-
-                    <li><a class="" href="{{URL::to('stepup-paid-user/11')}}">Paid User For STEPUP</a></li>
-                    <li><a class="" href="{{URL::to('stepup-unpaid-user/11')}}">UnPaid User For STEPUP</a></li>
-                   
-                    
-
-                    
-                </ul>
-            </li>
+              
+            
 
 
-              <li class="sub-menu">
-                <a href="javascript:;" class="">
-                    <i class="icon-book"></i>
-                    <span>CQ User</span>
-                    <span class="arrow"></span>
-                </a>
-                <ul class="sub">
-                   
-                    <li><a class="" href="{{URL::to('cq-paid-user')}}">Paid User</a></li>
-                    <li><a class="" href="{{URL::to('cq-unpaid-user')}}">UnPaid User</a></li>
-                   
-                    <li><a class="" href="{{URL::to('cq-school-user')}}">School User</a></li>
-
-                    
-                </ul>
-            </li>
-
-              <li class="sub-menu">
-                <a href="javascript:;" class="">
-                    <i class="icon-book"></i>
-                    <span>Code India User</span>
-                    <span class="arrow"></span>
-                </a>
-                <ul class="sub">
-                   
-                    <li><a class="" href="{{URL::to('code-india-code-user')}}">Register User</a></li>
-                   
-                    
-
-                    
-                </ul>
-            </li>
-              <li class="sub-menu">
-                  <a href="javascript:;" class="">
-                      <i class="icon-book"></i>
-                      <span>Curiosity User</span>
-                      <span class="arrow"></span>
-                  </a>
-                  <ul class="sub">
-                     
-                      <li><a class="" href="{{URL::to('olympaid-paid-user/curiosity')}}">Paid User</a></li>
-                      <li><a class="" href="{{URL::to('olympaid-unpaid-user/curiosity')}}">Unpaid User</a></li>
-                      
-
-                      
-                  </ul>
-              </li>
-              <li class="sub-menu">
-                  <a href="javascript:;" class="">
-                      <i class="icon-book"></i>
-                      <span>Olympaid User</span>
-                      <span class="arrow"></span>
-                  </a>
-                  <ul class="sub">
-                     
-                      <li><a class="" href="{{URL::to('olympaid-paid-user/ncojr')}}">Paid User</a></li>
-                      <li><a class="" href="{{URL::to('olympaid-unpaid-user/ncojr')}}">Unpaid User</a></li>
-                      <li><a class="" href="{{URL::to('olympaid-school-user')}}">School User</a></li>
-
-                      
-                  </ul>
-              </li>
               <li class="sub-menu">
                   <a href="javascript:;" class="">
                       <i class="icon-book"></i>
@@ -444,8 +350,8 @@
                   </a>
                   <ul class="sub">
                      
-                      <li><a class="" href="{{URL::to('paid-user')}}">Paid/Unpaid User</a></li>
-                      <li><a class="" href="{{URL::to('unpaid-user')}}">All User</a></li>
+                      <li><a class="" href="{{URL::to('regular-paid-user')}}">All User</a></li>
+                     
                       
                   </ul>
               </li>

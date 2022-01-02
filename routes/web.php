@@ -78,6 +78,8 @@ Route::get('/olympaid-unpaid-user/{user_type}', [SuperAdminController::class,'ol
 Route::get('/olympaid-school-user', [SuperAdminController::class,'olympaid_school_user']);
 Route::get('/code-india-code-user', [SuperAdminController::class,'code_india_code_user']);
 
+Route::get('/regular-paid-user', [SuperAdminController::class,'regular_paid_user']);
+
 /* Teacher courses */
 
 Route::get('/add-course', [SuperAdminController::class,'add_course']);
@@ -127,7 +129,8 @@ Route::post('post-category', [RegularCourseController::class, 'postcategory'])->
 Route::get('/manage-category', [RegularCourseController::class,'manage_category']);
 Route::get('/edit-category/{id}', [RegularCourseController::class,'edit_category']);
 Route::post('update-category', [RegularCourseController::class, 'updatecategory'])->name('updatecoursecategory');
-
+Route::get('/update-category-status/{id}/{st}', [RegularCourseController::class,'category_status']);
+Route::get('/delete-regular-category/{id}', [RegularCourseController::class,'delete_category']);
 /* Free Workshop */
 Route::get('/add-workshops', [WorkshopController::class,'add_workshops']);
 Route::post('post-workshops', [WorkshopController::class, 'postworkshops'])->name('postworkshops');
