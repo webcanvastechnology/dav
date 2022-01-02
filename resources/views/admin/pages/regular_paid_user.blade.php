@@ -109,8 +109,7 @@
                                             <th>Phone</th>
                                              <th>City</th>
                                               <th>Course</th>
-                                              <th>Date</th>
-                                               <th>Time</th>
+                                              
                                                <th>Amount</th>
                                                
                                                <th>Trans time</th>
