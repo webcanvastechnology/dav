@@ -7,7 +7,7 @@
     
     <p>Dear Participant, </p>
 
-<p>Thank you for registering for Regular Courses !!</p>
+<p>Thank you for registering for Courses !!</p>
 
  <h1>{{ $details['body'] }}</h1>
 

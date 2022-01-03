@@ -274,7 +274,7 @@ class RegularCoursePayment extends Controller
         $details = [
             'title' => $find_email->email_subject,
             'email_desc' => $find_email->email_desc,
-            'body' => 'Thank you for registering with us. One of our team members will come in contact with you soon. ' . $find_user->fees . 'Your Registration ID:' . $find_user->application_id,
+            'body' => 'Thank you for registering with us. One of our team members will come in contact with you soon. ' . 'Your Registration ID:' . $find_user->application_id,
         ];
 
         //$name = 'Lokesh';
