@@ -82,6 +82,7 @@ class RegularCoursePayment extends Controller
        }
        else{
         Toastr::success(' Thank you for registering with us. One of our team members will come in contact with you soon. ', 'Success');
+        $this->Regularmail_school($data['application_id']);
         return redirect()->route('courses');
        }
 
@@ -246,6 +247,34 @@ class RegularCoursePayment extends Controller
             'title' => $find_email->email_subject,
             'email_desc' => $find_email->email_desc,
             'body' => 'we have received your payment Rs.' . $find_user->amount . 'and Your Registration ID:' . $find_user->application_id,
+        ];
+
+        //$name = 'Lokesh';
+        //Mail::to('tanmoy.bishoi@gmail.com')->send(new SendMailable($name));
+
+        Mail::to($find_user->email)->send(new \App\Mail\RegularMail($details));
+
+        Toastr::success('Email Send Successfully ', 'Success');
+
+        return redirect::to('/');
+    }
+
+    public function Regularmail_school($reg_no)
+    {
+
+        $find_user = DB::table('events_regular')
+            
+            ->where('application_id', $reg_no)
+
+            
+            ->first();
+
+        $find_email = DB::table('regular_courses ')->where('id',$find_user->course_id)->first();
+
+        $details = [
+            'title' => $find_email->email_subject,
+            'email_desc' => $find_email->email_desc,
+            'body' => 'Thank you for registering with us. One of our team members will come in contact with you soon. ' . $find_user->amount . 'Your Registration ID:' . $find_user->application_id,
         ];
 
         //$name = 'Lokesh';
