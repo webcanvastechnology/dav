@@ -44,7 +44,7 @@ class RegularCoursePayment extends Controller
             'email' => 'required',
 
         ));
-        dd($request);
+        
         $payment_link=$request->payment_link;
         $data = array();
         $data['application_id'] = 'REG'.rand(100000, 999999);
@@ -63,7 +63,7 @@ class RegularCoursePayment extends Controller
         $data['aud_id'] = $request->sub_course_id;
         
        
-        $data['fees'] = (($request->fees) * ($request->number_of_participants));
+        $data['fees'] = ((int)($request->fees) * (int)($request->number_of_participants));
        /*  if ($request->course_module == null) {
             $data['fees'] = ($request->fees) * ($request->number_of_participants);
         } else {
