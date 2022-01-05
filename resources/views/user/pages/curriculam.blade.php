@@ -29,7 +29,7 @@
             <div class="col-lg-12 col-md-12">
                 <div class="blog-details-desc">
                     <div class="article-image">
-                        <img src="assets/img/curriculam/Curriculum Map.png" alt="image">
+                        <img src="assets/img/curriculam/Curriculum Map.-1-min.png" alt="image">
                     </div>
                     
                 </div>

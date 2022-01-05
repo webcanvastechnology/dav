@@ -250,7 +250,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a href="contact.html" class="nav-link">
+                                <a href="{{ route('contact') }}" class="nav-link {{ Request::routeIs('contact') ? 'active' : '' }}">
                                     Contact
                                 </a>
                             </li>

@@ -33,6 +33,9 @@ Route::get('/about', [FrontendController::class, 'home'])->name('about');
 Route::get('/curriculum-map', [FrontendController::class, 'curriculum'])->name('curriculum');
 Route::get('/courses', [FrontendController::class, 'courses'])->name('courses');
 Route::get('/course-details/{id}', [FrontendController::class, 'course_details']);
+Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
+Route::post('/send-contact',[FrontendController::class, 'contactPost'])->name('send-contact');
+
 Route::get('/apply-code',[FrontendController::class, 'apply_code'])->name('apply-code');
 Route::get('/home', [HomeController::class, 'index'])->name('userdashboard');
 Route::get('course-registration/{id}/{sub_id}', [RegularCoursePayment::class, 'course_registration'])->name('course-registration');

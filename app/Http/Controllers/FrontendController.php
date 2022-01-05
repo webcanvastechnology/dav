@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use Artisan;
+use Toastr;
 class FrontendController extends Controller
 {
 
@@ -120,6 +121,46 @@ class FrontendController extends Controller
                
                 
     }
+    public function contact()
+    {
+       
+        
+        return view('user.pages.contact');
+               
+                
+    }
+
+    public function contactPost(Request $request){
+
+ 
+
+      $this->validate($request,array(
+             
+             'name'=>'required',
+             'email'=>'required',
+             'phone'=>'required',
+             'subject'=>'required',
+             'message'=>'required',
+            
+         ));
+   
+      $data=array();
+         
+         $data['name'] = $request->name;
+        
+         $data['phone'] = $request->phone;
+         $data['email'] = $request->email;
+         $data['subject'] = $request->subject;
+         $data['message'] = $request->message;
+         $data['created_at']=date('Y-m-d H:i:s');
+ 
+           DB::table('contacts')->insert($data);
+ 
+           Toastr::success('Thank you. Your message has been submitted, we will get back to you soon ', 'Success');
+        return redirect()->route('contact');
+       
+     }
+ 
     public function load_product()
     {
        
