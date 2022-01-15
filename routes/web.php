@@ -45,7 +45,8 @@ Route::post('regular-payment-process', [RegularCoursePayment::class, 'paymentPro
 
 Route::get('regular-payment-success/{app_id}', [RegularCoursePayment::class, 'paymentSuccess']);
 
-Route::post('/search', [FrontendController::class, 'load_products'])->name('load_products');
+Route::post('get-filter', [FrontendController::class, 'get_filter']);
+
 
 /*
 Start Admin Panel

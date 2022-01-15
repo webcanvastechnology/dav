@@ -76,7 +76,7 @@ class RegularCourseController extends Controller
         $data['card_bgcolor'] = $request->card_bgcolor;
        
        
-        $data['audience_category'] =  json_encode($request->cat);
+        $data['audience_category'] = implode (", ",$request->cat);
          $data['have_individual_module'] = $request->have_individual_module;
         $data['short_desc'] = $request->short_desc;
         $data['long_desc'] = $request->long_desc;
@@ -121,12 +121,39 @@ public function edit_regular_course($id)
         $this->superadmin_auth_check();
 
         $all_audience = DB::table('aud_category')->get();
+        $all_grade = DB::table('grades')->get();
+        $all_foundation = DB::table('cs_foundation')->get();
+        $all_discover = DB::table('cs_discover')->get();
+        $all_expediion = DB::table('cs_expediion')->get();
+        $all_tools = DB::table('tools')->get();
+
         $find_course = DB::table('regular_courses')->where('id',$id)->first();
+        $Selectedcategory = explode(',', $find_course->course_category);
+        $Selectedaud = explode(',', $find_course->audience_category);
+        
         $all_category=DB::table('course_category')->get();
+
+        $Selectedgrade = explode(',', $find_course->grade);
+        $Selectedfoundation = explode(',', $find_course->cs_foundation);
+        $Selecteddiscover = explode(',', $find_course->cs_discover);
+        $Selectedexpediion = explode(',', $find_course->cs_expediion);
+        $Selectedtools = explode(',', $find_course->cs_tools);
             
         $addcourse=view('admin.pages.edit_regular_courses')
                     ->with('all_audience',$all_audience)
+                    ->with('all_grade',$all_grade)
+                    ->with('all_foundation',$all_foundation)
+                    ->with('all_discover',$all_discover)
+                    ->with('all_expediion',$all_expediion)
+                    ->with('all_tools',$all_tools)
                     ->with('find_course',$find_course)
+                    ->with('Selectedgrade',$Selectedgrade)
+                    ->with('Selectedfoundation',$Selectedfoundation)
+                    ->with('Selecteddiscover',$Selecteddiscover)
+                    ->with('Selectedexpediion',$Selectedexpediion)
+                    ->with('Selectedtools',$Selectedtools)
+                    ->with('Selectedcategory',$Selectedcategory)
+                    ->with('Selectedaud',$Selectedaud)
                     ->with('all_category',$all_category);
                         
             return view('admin.admin-master')
@@ -150,6 +177,13 @@ public function edit_regular_course($id)
             
              
         ));
+
+        $grade=implode (", ",$request->grade);
+        $foundation=implode (", ",$request->foundation);
+        $discover=implode (", ",$request->discover);
+        $expediion=implode (", ",$request->expediion);
+        $tools=implode (", ",$request->tools);
+
 
 
         $data=array();
@@ -182,8 +216,12 @@ public function edit_regular_course($id)
         
         $data['card_bgcolor'] = $request->card_bgcolor;
        
-       
-        $data['audience_category'] =  json_encode($request->cat);
+        $data['grade'] = $grade;
+        $data['cs_foundation'] = $foundation;
+        $data['cs_discover'] = $discover;
+        $data['cs_expediion'] = $expediion;
+        $data['cs_tools'] = $tools;
+        $data['audience_category'] = implode (", ",$request->cat); 
          $data['have_individual_module'] = $request->have_individual_module;
         $data['short_desc'] = $request->short_desc;
         $data['long_desc'] = $request->long_desc;

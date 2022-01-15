@@ -109,7 +109,7 @@
                                                 <option value="">--select--</option>  
                                                 @foreach($all_category as $v_category)
                                                 
-                                                <option value="{{ $v_category->id }}">{{ $v_category->category_name }}</option>
+                                                <option value="{{ $v_category->id }}" @if(in_array($v_category->id,$Selectedcategory)) selected @endif>{{ $v_category->category_name }}</option>
                                                
                                                @endforeach
                                                 
@@ -196,7 +196,7 @@
                                                 <select data-placeholder="Your Audience Category" name="cat[]" class="chzn-select span6" multiple="multiple" tabindex="6">
                                                     <option value=""></option>
                                                     @foreach($all_audience as $v_aud)
-                                                        <option value="{{ $v_aud->aud_id }}">{{ $v_aud->aud_title }}</option>
+                                                        <option value="{{ $v_aud->aud_id }}" @if(in_array($v_aud->aud_id,$Selectedaud)) selected @endif>{{ $v_aud->aud_title }}</option>
                                                     @endforeach
                                                         
                                                    
@@ -205,7 +205,77 @@
                                             </div>
                                         </div>
                                         
-                                       
+                                        <div class="control-group">
+                                            <label class="control-label">Grade</label>
+                                            <div class="controls">
+                                                <select data-placeholder="Select Grade" name="grade[]" class="chzn-select span6" multiple="multiple" tabindex="6">
+                                                    <option value=""></option>
+                                                    @foreach($all_grade as $v_grade)
+                                                        <option value="{{ $v_grade->grade_id }}" @if(in_array($v_grade->grade_id,$Selectedgrade)) selected @endif>{{ $v_grade->grade_name }}</option>
+                                                    @endforeach
+                                                        
+                                                   
+                                                   
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="control-group">
+                                            <label class="control-label">CS Foundation</label>
+                                            <div class="controls">
+                                                <select data-placeholder="Select Foundation" name="foundation[]" class="chzn-select span6" multiple="multiple" tabindex="6">
+                                                    <option value=""></option>
+                                                    @foreach($all_foundation as $v_foundation)
+                                                        <option value="{{ $v_foundation->cs_foundation_id }}" @if(in_array($v_foundation->cs_foundation_id,$Selectedfoundation)) selected @endif>{{ $v_foundation->cs_foundation_name }}</option>
+                                                    @endforeach
+                                                        
+                                                   
+                                                   
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label">CS Discover</label>
+                                            <div class="controls">
+                                                <select data-placeholder="Select Discover" name="discover[]" class="chzn-select span6" multiple="multiple" tabindex="6">
+                                                    <option value=""></option>
+                                                    @foreach($all_discover as $v_discover)
+                                                        <option value="{{ $v_discover->cs_discover_id }}"@if(in_array($v_discover->cs_discover_id,$Selecteddiscover)) selected @endif>{{ $v_discover->cs_discover_name }}</option>
+                                                    @endforeach
+                                                        
+                                                   
+                                                   
+                                                </select>
+                                            </div>
+                                        </div>      
+                                        <div class="control-group">
+                                            <label class="control-label">CS Expediion</label>
+                                            <div class="controls">
+                                                <select data-placeholder="Select Expediion" name="expediion[]" class="chzn-select span6" multiple="multiple" tabindex="6">
+                                                    <option value=""></option>
+                                                    @foreach($all_expediion as $v_expediion)
+                                                        <option value="{{ $v_expediion->cs_expediion_id }}" @if(in_array($v_expediion->cs_expediion_id,$Selectedexpediion)) selected @endif>{{ $v_expediion->cs_expediion_name }}</option>
+                                                    @endforeach
+                                                        
+                                                   
+                                                   
+                                                </select>
+                                            </div>
+                                        </div>      
+                                        <div class="control-group">
+                                            <label class="control-label">CS Tools</label>
+                                            <div class="controls">
+                                                <select data-placeholder="Select Expediion" name="tools[]" class="chzn-select span6" multiple="multiple" tabindex="6">
+                                                    <option value=""></option>
+                                                    @foreach($all_tools as $v_tools)
+                                                        <option value="{{ $v_tools->tools_id }}" @if(in_array($v_tools->tools_id,$Selectedtools)) selected @endif>{{ $v_tools->tools_name }}</option>
+                                                    @endforeach
+                                                        
+                                                   
+                                                   
+                                                </select>
+                                            </div>
+                                        </div>      
 
                                         <div class="control-group">
                                             <label class="control-label">Have Course Module ?</label>

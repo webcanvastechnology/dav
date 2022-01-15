@@ -49,35 +49,29 @@
                                     aria-labelledby="grade" data-bs-parent="#accordionExample">
                                     <div class="accordion-body text-muted">
                                         <ul class="list-unstyled sidebar-nav mb-0">
-                                           
-                                            @foreach($all_grade as $key => $grade)
-
-                                            <?php 
                                             
-                                                if(isset($_POST['grade_name'])) {
-                                                    if(in_array(str_replace(' ','_',$grade['grade_name']),$_POST['grade_name'])) {
-                                                        $gradeCheck ='checked="checked"';
-                                                    } else {
-                                                        $gradeCheck="";
-                                                    }
-                                                }
-                                            ?>
+                                           
+                                            @foreach($all_grade as $v_grade)
+
+                                            
                                             
                                             <li class="navbar-item custom-navbar-item">
                                                 <div class="row">
                                                     <div class="col-md-2 col-sm-2 col-2">
-                                                        <input class="form-check-input" type="checkbox" name="grades[]"  value="<?php echo str_replace(' ','_',$grade->grade_name); ?>" <?php echo @$gradeCheck; ?>/>
+                                                        <input class="form-check-input" type="checkbox" name="grade" id="{{$v_grade->grade_id}}" value="{{$v_grade->grade_id}}"/>
                                                     </div>
 
                                                     <div class="col-md-10 col-sm-10 col-10">
-                                                        <p>{!! $grade->grade_name !!}</p>
+                                                        <p>{!! $v_grade->grade_name !!}</p>
                                                     </div>
                                                 </div>
                                             </li>
+                                           
                                             @endforeach
                                            
+                                           
                                         </ul>
-                                    </form>
+                                   
                                     </div>
                                 </div>
                             </div>
@@ -104,7 +98,7 @@
                                             <li class="navbar-item custom-navbar-item">
                                                 <div class="row">
                                                     <div class="col-md-2 col-sm-2 col-2">
-                                                        <input class="form-check-input" type="checkbox" />
+                                                        <input class="form-check-input" type="checkbox" name="foundation" value="{{$v_foundation->cs_foundation_id}}"/>
                                                     </div>
 
                                                     <div class="col-md-10 col-sm-10 col-10">
@@ -137,7 +131,7 @@
                                             <li class="navbar-item custom-navbar-item">
                                                 <div class="row">
                                                     <div class="col-md-2 col-sm-2 col-2">
-                                                        <input class="form-check-input" type="checkbox" />
+                                                        <input class="form-check-input" type="checkbox" name="discover" value="{{$v_discover->cs_discover_id}}" />
                                                     </div>
 
                                                     <div class="col-md-10 col-sm-10 col-10">
@@ -169,7 +163,7 @@
                                             <li class="navbar-item custom-navbar-item">
                                                 <div class="row">
                                                     <div class="col-md-2 col-sm-2 col-2">
-                                                        <input class="form-check-input" type="checkbox" />
+                                                        <input class="form-check-input" type="checkbox" name="expediion" value="{{$v_expediion->cs_expediion_id}}"/>
                                                     </div>
 
                                                     <div class="col-md-10 col-sm-10 col-10">
@@ -208,7 +202,7 @@
                                             <li class="navbar-item custom-navbar-item">
                                                 <div class="row">
                                                     <div class="col-md-2 col-sm-2 col-2">
-                                                        <input class="form-check-input" type="checkbox" />
+                                                        <input class="form-check-input" type="checkbox" name="tools" value="{{$v_tools->tools_id}}" />
                                                     </div>
 
                                                     <div class="col-md-10 col-sm-10 col-10">
@@ -228,7 +222,7 @@
                 
             </div>
             <div class="col-md-9">
-                <div class="row">
+                <div class="row"  id="course">
             @foreach ($all_course as $v_course )
             <div class="col-lg-6 col-md-6">
                 <div class="single-class">
@@ -286,63 +280,64 @@
         </div>
     </div>
 </section>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!-- Script -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
-$(document).ready(function() {
-    var totalRecord = 0;
-	var grade = getCheckboxValues('grades');
-   /*  var brand = getCheckboxValues('brand');
-    var material = getCheckboxValues('material');
-    var size = getCheckboxValues('size');
-    var totalData = $("#totalRecords").val();
-	var sorting = getCheckboxValues('sorting'); */
-	$.ajax({
-		type: 'POST',
-		url : "/search",
-		dataType: "json",			
-		data:{grade:grade},
-		success: function (data) {
-			$("#results").append(data.products);
-			totalRecord++;
-		}
-	});	
-    $(window).scroll(function() {
-		scrollHeight = parseInt($(window).scrollTop() + $(window).height());		
-        if(scrollHeight == $(document).height()){	
-            if(totalRecord <= totalData){
-                loading = true;
-                $('.loader').show();                
-				$.ajax({
-					type: 'POST',
-					url : "load_products.php",
-					dataType: "json",			
-					data:{totalRecord:totalRecord, brand:brand, material:material, size:size},
-					success: function (data) {
-						$("#results").append(data.products);
-						$('.loader').hide();
-						totalRecord++;
-					}
-				});
-            }            
-        }
-    });
-    function getCheckboxValues(checkboxClass){
-        var values = new Array();
-		$("."+checkboxClass+":checked").each(function() {
-		   values.push($(this).val());
-		});
-        return values;
+
+var getfilters = function (grade,foundation,discover,expediion,tools) {
+  console.log(grade);
+  $.ajax({
+    type: 'POST',
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    },
+    url: '/get-filter',
+    data: {
+      "grade": grade,"foundation":foundation,"discover":discover,"expediion":expediion,"tools":tools,
+      "_token": "{{ csrf_token() }}"
+    },
+    error: function(e) {
+      console.log(e.responseText);
+    },
+    success: function (data) {
+      
+      
+      $('#course').html(data)
     }
-    $('.sort_rang').change(function(){
-        $("#search_form").submit();
-        return false;
+  });
+};
+
+$(document).ready(function() {
+    $('input[type="checkbox"]').on('change', function(event) {
+      event.preventDefault();
+      var grade = [];
+      var foundation = [];
+      var discover = [];
+      var expediion = [];
+      var tools = [];
+     
+      $.each($("input[name='grade']:checked"), function() {            
+        grade.push($(this).val());
+      });
+
+      $.each($("input[name='foundation']:checked"), function() {            
+        foundation.push($(this).val());
+      });
+
+      $.each($("input[name='discover']:checked"), function() {            
+        discover.push($(this).val());
+      });
+      $.each($("input[name='expediion']:checked"), function() {            
+        expediion.push($(this).val());
+      });
+      $.each($("input[name='tools']:checked"), function() {            
+        tools.push($(this).val());
+      });
+  
+      $('#myResponse').html(); 
+      getfilters(grade,foundation,discover,expediion,tools);
     });
-	$(document).on('click', 'label', function() {
-		if($('input:checkbox:checked')) {
-			$('input:checkbox:checked', this).closest('label').addClass('active');
-		}
-	});	
-});
+  });
 </script>
 
 @endsection
