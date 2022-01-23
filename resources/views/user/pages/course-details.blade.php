@@ -252,7 +252,7 @@
                     {{-- <h3>Audience Category</h3> --}}
                     <?php if($status==1){ ?>
 
-                        <?php $auds = json_decode($find_course->audience_category ); ?>
+                        <?php $auds = explode(',', $find_course->audience_category); ?>
                         @if (is_array($auds))
                     <div class="row">
                         
