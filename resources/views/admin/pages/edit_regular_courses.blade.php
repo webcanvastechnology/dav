@@ -337,7 +337,14 @@
 
 
 <script>
-    CKEDITOR.replace('short_desc');
+   
+    CKEDITOR.replace('short_desc', {
+
+filebrowserUploadUrl: "{{route('ckeditor.upload', ['_token' => csrf_token() ])}}",
+
+filebrowserUploadMethod: 'form'
+
+});
 
 </script>
 <script>

@@ -39,7 +39,7 @@
                    <!-- END THEME CUSTOMIZER-->
                   <!-- BEGIN PAGE TITLE & BREADCRUMB-->
                    <h3 class="page-title">
-                     user Table
+                     Courses Table
                    </h3>
                    <ul class="breadcrumb">
                        <li>
@@ -51,7 +51,7 @@
                            <span class="divider">/</span>
                        </li>
                        <li class="active">
-                              user Table
+                        Courses Table
                        </li>
                        <li class="pull-right search-wrap">
                            <form action="http://thevectorlab.net/metrolab/search_result.html" class="hidden-phone">
@@ -72,7 +72,7 @@
                      <!-- BEGIN EXAMPLE TABLE widget-->
                      <div class="widget purple">
                          <div class="widget-title">
-                             <h4><i class="icon-reorder"></i> Contact Table</h4>
+                             <h4><i class="icon-reorder"></i> Courses Table</h4>
                             <span class="tools">
                                 <a href="javascript:;" class="icon-chevron-down"></a>
                                 <a href="javascript:;" class="icon-remove"></a>
@@ -167,9 +167,18 @@
 
             <!-- END EDITABLE TABLE widget-->
          </div>
-         <div class="container">
-            <div class="row">
-                <div class="col-md-4">
+         <div class="container-fluid">
+            <!-- BEGIN PAGE HEADER-->   
+            <div class="row-fluid">
+                <div class="span6">
+                    <div class="widget purple">
+                        <div class="widget-title">
+                            <h4><i class="icon-reorder"></i> Courses Order</h4>
+                           <span class="tools">
+                               <a href="javascript:;" class="icon-chevron-down"></a>
+                               <a href="javascript:;" class="icon-remove"></a>
+                           </span>
+                        </div>
         
                     <ul class="sort_menu list-group">
                         @foreach ($all_menu as $row)
@@ -177,34 +186,54 @@
                             <span class="handle">{{$row->course_title}}</span> </li>
                         @endforeach
                     </ul>
+                    </div>
         
                 </div>
             </div>
         </div>
         <style>
+           
             .list-group-item {
                 display: flex;
                 align-items: center;
                 padding-bottom: 5px;
                 text-align: center;
                 color: #fff;
-                font-size: 16px;
+                font-size: 16px; 
+                background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s; 
                 
             }
+            .button2:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
         
             .highlight {
                 background: #f7e7d3;
                 min-height: 30px;
                 list-style-type: none;
+               
             }
         
             .handle {
                 min-width: 100%;
-                background: #079ee9;
-                height: 40px;
+                  /* background: #079ee9;   */
+                height: 30px;
                 display: inline-block;
                 cursor: move;
                 margin-right: 10px;
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+               
                 
             }
         </style>
