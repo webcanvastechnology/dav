@@ -467,7 +467,7 @@
 </section>
 
 
-<section class="event-area bg-ffffff pt-100 pb-70">
+<section class="event-area bg-ffffff pt-100 pb-70" id="event">
     <div class="container">
         <div class="section-title">
             <span>Events</span>

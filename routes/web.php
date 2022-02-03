@@ -8,6 +8,7 @@ use App\Http\Controllers\SuperAdminController;
 use App\Http\Controllers\RegularCourseController;
 use App\Http\Controllers\WorkshopController;
 use App\Http\Controllers\RegularCoursePayment;
+use App\Http\Controllers\CkeditorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -115,10 +116,13 @@ Route::get('update-course-special-order', [SuperAdminController::class, 'updateO
 Route::get('/add-regular-course', [RegularCourseController::class,'add_course']);
 Route::post('post-regular-course', [RegularCourseController::class, 'postCourse'])->name('postregularcourse');
 Route::get('/manage-regular-course', [RegularCourseController::class,'manage_course']);
+Route::get('update-course-order', [RegularCourseController::class, 'updateOrder'])->name('update-course-order');
 Route::get('/edit-regular-course/{id}', [RegularCourseController::class,'edit_regular_course']);
 Route::post('update-regular-course', [RegularCourseController::class, 'updateCourse'])->name('updateregularcourse');
 Route::get('/update-status-regular-course/{id}/{st}', [RegularCourseController::class,'status_course']);
 Route::get('/delete-regular-course/{id}', [RegularCourseController::class,'delete_course']);
+
+Route::post('ckeditor/upload', [CkeditorController::class,'upload'])->name('ckeditor.upload');
 
 Route::get('/add-audience', [RegularCourseController::class,'add_audience']);
 Route::post('post-audience', [RegularCourseController::class, 'postaudience'])->name('postaudiencecategory');

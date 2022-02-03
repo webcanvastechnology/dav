@@ -106,14 +106,34 @@ class RegularCourseController extends Controller
 
         
 
-        $all_course = DB::table('regular_courses')
-           
-            ->get();
+        $all_course = DB::table('regular_courses')->get();
+        $all_menu = DB::table('regular_courses')->orderBy('sort_id','asc')->get();
+
 
         $manage_course=view('admin.pages.regular_course_list')
-                        ->with('all_course',$all_course);
+                        ->with('all_course',$all_course)
+                        ->with('all_menu',$all_menu);
          return view('admin.admin-master')
                 ->with('admin_main_content',$manage_course);
+}
+
+public function updateOrder(Request $request){
+    $this->superadmin_auth_check();
+    if($request->has('ids')){
+        $arr = explode(',',$request->input('ids'));
+       
+        //exit();
+        foreach($arr as $sortOrder => $id){
+            $menu = DB::table('regular_courses')->where('id',$id)->first();
+           
+            
+            $menu->sort_id = $sortOrder;
+            DB::table('regular_courses')->where('id',$menu->id)
+            ->update(['sort_id' => $sortOrder]);
+            
+        }
+        return ['success'=>true,'message'=>'Updated'];
+    }
 }
 
 public function edit_regular_course($id)

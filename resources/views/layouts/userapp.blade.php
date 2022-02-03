@@ -243,7 +243,7 @@
                             </li>
                             <li class="nav-item">
 
-                                <a href="{{ route('courses') }}" class="nav-link">
+                                <a href="#event" class="nav-link {{ Request::routeIs('#event') ? 'active' : '' }}">
                                     Upcoming Events
                                 </a>
 

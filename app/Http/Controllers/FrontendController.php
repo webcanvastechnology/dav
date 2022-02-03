@@ -74,7 +74,7 @@ class FrontendController extends Controller
     public function courses()
     {
 
-        $all_course = DB::table('regular_courses')->get();
+        $all_course = DB::table('regular_courses')->orderBy('sort_id','asc')->get();
         $all_grade = DB::table('grades')->get();
         $all_foundation = DB::table('cs_foundation')->get();
         $all_discover = DB::table('cs_discover')->get();

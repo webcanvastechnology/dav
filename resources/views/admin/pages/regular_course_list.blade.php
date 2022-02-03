@@ -167,7 +167,82 @@
 
             <!-- END EDITABLE TABLE widget-->
          </div>
-
+         <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+        
+                    <ul class="sort_menu list-group">
+                        @foreach ($all_menu as $row)
+                        <li class="list-group-item" data-id="{{$row->id}}">
+                            <span class="handle">{{$row->course_title}}</span> </li>
+                        @endforeach
+                    </ul>
+        
+                </div>
+            </div>
+        </div>
+        <style>
+            .list-group-item {
+                display: flex;
+                align-items: center;
+                padding-bottom: 5px;
+                text-align: center;
+                color: #fff;
+                font-size: 16px;
+                
+            }
+        
+            .highlight {
+                background: #f7e7d3;
+                min-height: 30px;
+                list-style-type: none;
+            }
+        
+            .handle {
+                min-width: 100%;
+                background: #079ee9;
+                height: 40px;
+                display: inline-block;
+                cursor: move;
+                margin-right: 10px;
+                
+            }
+        </style>
+        
+        
+                 <script src="https://unpkg.com/jquery@2.2.4/dist/jquery.js"></script>
+        <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+        <link href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css"/>
+        <script>
+            $(document).ready(function(){
+        
+                function updateToDatabase(idString){
+                   $.ajaxSetup({ headers: {'X-CSRF-TOKEN': '{{csrf_token()}}'}});
+                    
+                   $.ajax({
+                      url:'{{url('update-course-order')}}',
+                      method:'GET',
+                      data:{ids:idString},
+                      success:function(){
+                         alert('Successfully updated')
+                            //do whatever after success
+                      }
+                   })
+                }
+        
+                var target = $('.sort_menu');
+                target.sortable({
+                    handle: '.handle',
+                    placeholder: 'highlight',
+                    axis: "y",
+                    update: function (e, ui){
+                       var sortData = target.sortable('toArray',{ attribute: 'data-id'})
+                       updateToDatabase(sortData.join(','))
+                    }
+                })
+                
+            })
+        </script>
     <script type="text/javascript">
 
       $(document).ready(function() {

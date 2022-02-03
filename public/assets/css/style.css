@@ -2190,8 +2190,8 @@ h6:last-child {
   padding: 45px 30px 30px;
   position: relative;
   border-radius: 0 0 10px 10px;
-  -webkit-box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
-  box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
+  -webkit-box-shadow: 0 2px 38px 0 rgba(0, 0, 0, 0.09);
+  box-shadow: 0 2px 38px 0 rgba(0, 0, 0, 0.09);
 }
 .single-class .class-content .price {
   position: absolute;
